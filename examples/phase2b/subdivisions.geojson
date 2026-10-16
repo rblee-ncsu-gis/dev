@@ -1,0 +1,4 @@
+{"type":"FeatureCollection","features":[
+ {"type":"Feature","properties":{"SUB_KEY":"AREA-A","SUB_NAME":"SYNTHETIC ALPHA ESTATES"},"geometry":{"type":"Polygon","coordinates":[[[-78.206,34.044],[-78.194,34.044],[-78.194,34.056],[-78.206,34.056],[-78.206,34.044]]]}},
+ {"type":"Feature","properties":{"SUB_KEY":"AREA-B","SUB_NAME":"SYNTHETIC BETA ESTATES"},"geometry":{"type":"Polygon","coordinates":[[[-78.306,34.044],[-78.294,34.044],[-78.294,34.056],[-78.306,34.056],[-78.306,34.044]]]}}
+]}

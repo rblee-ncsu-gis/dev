@@ -1,8 +1,35 @@
 # Utility as-built matcher feasibility pilot
 
+Phase 2B adds read-only geographic candidate-area localization from accepted
+clues and configurable WGS84 GeoJSON road/subdivision/parcel snapshots, with CSV,
+JSON and offline map review. See the [workflow and analyst export checklist](docs/PHASE2B_WORKFLOW.md)
+and [Phase 2B assessment](docs/PHASE2B_ASSESSMENT.md). County reference data and
+independent area evaluation are still needed; existing clue approvals are preserved.
+
+For the first measured OCR baseline, follow
+[these instructions](docs/PHASE2A_FIRST_BASELINE.md). The local runner supports
+side-by-side visual OCR review, character/word accuracy and explicit executable
+paths without environment-variable changes. Recognition can run before analyst
+acceptance; accuracy scoring cannot.
+
+Phase 2A adds optional local Tesseract OCR, reproducible preprocessing and word-box
+mapping. Accuracy scoring now requires independent human acceptance; AI-reviewed
+clues are ineligible. See [the OCR workflow](docs/PHASE2A_WORKFLOW.md) and
+[the current Phase 2A assessment](docs/PHASE2A_ASSESSMENT.md).
+
+Phase 1C adds review manifests, unreadable decisions, verified clue exports and
+separate OCR/entity scoring without invoking OCR. See
+[the review workflow](docs/PHASE1C_WORKFLOW.md) and
+[the Phase 1C assessment](docs/PHASE1C_ASSESSMENT.md).
+
+Phase 1B now supports native raster preparation and reviewed manual clue records.
+See [the workflow](docs/PHASE1B_WORKFLOW.md) and
+[C7/C8 raster assessment](docs/PHASE1B_ASSESSMENT.md) for commands and actual results.
+
 Phase 1 extracts local PDF evidence for analyst inspection. The project scope is
 [ASBUILT_CODEX_CONTEXT.md](docs/ASBUILT_CODEX_CONTEXT.md). No GIS connection,
-asset matching, OCR, model inference, or publication is implemented yet.
+asset matching, model inference, or publication is implemented. Optional local OCR
+and geographic localization now use the later-phase workflows above.
 
 Use a cloned ArcGIS Pro Python environment in VS Code. Select **Python: Select
 Interpreter**, then choose the clone's `python.exe`. Do not experiment in the

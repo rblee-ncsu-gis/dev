@@ -1,0 +1,26 @@
+{
+  "crs": "EPSG:4326",
+  "datasets": [
+    {
+      "id": "county-roads",
+      "kind": "roads",
+      "path": "../approved-reference/roads.geojson",
+      "fields": {"id": "REPLACE_STABLE_ROAD_ID_FIELD", "name": "REPLACE_FULL_ROAD_NAME_FIELD", "aliases": ["REPLACE_ALIAS_FIELD"]},
+      "metadata": {"authority": "Brunswick County - analyst to confirm source", "source_layer": "REPLACE_SOURCE_LAYER", "exported_at": "REPLACE_UTC_TIMESTAMP", "vintage": "REPLACE_DATA_VINTAGE", "filters": "REPLACE_EXPORT_FILTERS", "source_crs": "EPSG:2264", "output_crs": "EPSG:4326", "transformation": "REPLACE_EXPORT_TRANSFORMATION_DETAILS", "synthetic": false}
+    },
+    {
+      "id": "county-subdivisions",
+      "kind": "subdivisions",
+      "path": "../approved-reference/subdivisions.geojson",
+      "fields": {"id": "REPLACE_STABLE_SUBDIVISION_ID_FIELD", "name": "REPLACE_SUBDIVISION_NAME_FIELD"},
+      "metadata": {"authority": "Brunswick County - analyst to confirm source", "source_layer": "REPLACE_SOURCE_LAYER", "exported_at": "REPLACE_UTC_TIMESTAMP", "synthetic": false}
+    },
+    {
+      "id": "county-parcels",
+      "kind": "parcels",
+      "path": "../approved-reference/parcels.geojson",
+      "fields": {"id": "REPLACE_STABLE_FEATURE_ID_FIELD", "parcel_id": "REPLACE_PARCEL_NUMBER_FIELD", "lot": "REPLACE_LOT_FIELD", "address": "REPLACE_ADDRESS_FIELD"},
+      "metadata": {"authority": "Brunswick County - analyst to confirm source", "source_layer": "REPLACE_SOURCE_LAYER", "exported_at": "REPLACE_UTC_TIMESTAMP", "synthetic": false}
+    }
+  ]
+}

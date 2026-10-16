@@ -1,0 +1,15 @@
+{
+  "crs": "EPSG:4326",
+  "area_of_interest_bbox": [-78.5, 33.9, -78.0, 34.2],
+  "datasets": [
+    {"id": "synthetic-roads", "kind": "roads", "path": "roads.geojson",
+     "fields": {"id": "ROAD_GUID", "name": ["NAME_TEXT", "SUFFIX"], "aliases": ["ALT_NAMES"], "level": "Z_LEVEL"},
+     "metadata": {"authority": "Fabricated test fixture, NOT Brunswick County GIS", "source_layer": "synthetic roads", "synthetic": true, "exported_at": "2026-10-16T00:00:00Z"}},
+    {"id": "synthetic-subdivisions", "kind": "subdivisions", "path": "subdivisions.geojson",
+     "fields": {"id": "SUB_KEY", "name": "SUB_NAME"},
+     "metadata": {"authority": "Fabricated test fixture, NOT Brunswick County GIS", "source_layer": "synthetic subdivisions", "synthetic": true, "exported_at": "2026-10-16T00:00:00Z"}},
+    {"id": "synthetic-parcels", "kind": "parcels", "path": "parcels.geojson",
+     "fields": {"id": "GID", "parcel_id": "PIN", "lot": "LOT_TXT", "address": "ADDR"},
+     "metadata": {"authority": "Fabricated test fixture, NOT Brunswick County GIS", "source_layer": "synthetic parcels", "synthetic": true, "exported_at": "2026-10-16T00:00:00Z"}}
+  ]
+}

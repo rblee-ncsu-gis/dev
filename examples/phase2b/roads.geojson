@@ -1,0 +1,6 @@
+{"type":"FeatureCollection","features":[
+ {"type":"Feature","id":"road-a1","properties":{"ROAD_GUID":"A-PINE","NAME_TEXT":"SYNTHETIC PINE","SUFFIX":"ROAD","ALT_NAMES":["SYNTHETIC PINE RD"],"Z_LEVEL":0},"geometry":{"type":"LineString","coordinates":[[-78.205,34.05],[-78.195,34.05]]}},
+ {"type":"Feature","id":"road-a2","properties":{"ROAD_GUID":"A-OAK","NAME_TEXT":"SYNTHETIC OAK","SUFFIX":"LANE","ALT_NAMES":[],"Z_LEVEL":0},"geometry":{"type":"LineString","coordinates":[[-78.2,34.045],[-78.2,34.055]]}},
+ {"type":"Feature","id":"road-b1","properties":{"ROAD_GUID":"B-PINE","NAME_TEXT":"SYNTHETIC PINE","SUFFIX":"ROAD","ALT_NAMES":[],"Z_LEVEL":0},"geometry":{"type":"LineString","coordinates":[[-78.305,34.05],[-78.295,34.05]]}},
+ {"type":"Feature","id":"road-b2","properties":{"ROAD_GUID":"B-OAK","NAME_TEXT":"SYNTHETIC OAK","SUFFIX":"LANE","ALT_NAMES":[],"Z_LEVEL":0},"geometry":{"type":"LineString","coordinates":[[-78.3,34.045],[-78.3,34.055]]}}
+]}

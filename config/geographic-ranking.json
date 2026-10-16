@@ -1,0 +1,8 @@
+{
+  "fuzzy_threshold": 0.86,
+  "spatial_tolerance_m": 75,
+  "ambiguity_margin": 10,
+  "max_area_diagonal_m": 5000,
+  "max_matches_per_clue": 200,
+  "max_candidates": 2000
+}

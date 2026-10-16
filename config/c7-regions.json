@@ -1,0 +1,6 @@
+[
+  {"id": "title", "page_number": 1, "kind": "title_block", "bbox": [1500, 1470, 2490, 1610], "notes": "C7 project and sheet title, manually selected from assessment preview"},
+  {"id": "plan", "page_number": 1, "kind": "plan_view_labels", "bbox": [170, 80, 2460, 735], "notes": "Upper plan view; excludes longitudinal profile"},
+  {"id": "road", "page_number": 1, "kind": "plan_view_labels", "bbox": [320, 450, 590, 510], "notes": "NC 211 / Supply Road label"},
+  {"id": "cemetery", "page_number": 1, "kind": "plan_view_labels", "bbox": [2320, 635, 2450, 720], "notes": "Cape Fear Memorial Park Cemetery label"}
+]

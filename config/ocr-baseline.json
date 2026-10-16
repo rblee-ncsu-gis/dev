@@ -1,0 +1,15 @@
+{
+  "language": "eng",
+  "psm": 6,
+  "oem": 1,
+  "timeout_seconds": 60,
+  "max_pixels": 40000000,
+  "variants": [
+    {"id": "baseline"},
+    {"id": "gray", "grayscale": true},
+    {"id": "contrast", "grayscale": true, "contrast": 1.5},
+    {"id": "threshold", "grayscale": true, "threshold": 160},
+    {"id": "scale2", "grayscale": true, "scale": 2},
+    {"id": "scale2_threshold", "grayscale": true, "scale": 2, "threshold": 160}
+  ]
+}

@@ -1,0 +1,4 @@
+{"type":"FeatureCollection","features":[
+ {"type":"Feature","properties":{"GID":"PARCEL-A","PIN":"PX-001","LOT_TXT":"012","ADDR":"12 SYNTHETIC PINE ROAD"},"geometry":{"type":"Polygon","coordinates":[[[-78.2003,34.0497],[-78.1997,34.0497],[-78.1997,34.0503],[-78.2003,34.0503],[-78.2003,34.0497]]]}},
+ {"type":"Feature","properties":{"GID":"PARCEL-B","PIN":"PX-002","LOT_TXT":"013","ADDR":"13 SYNTHETIC PINE ROAD"},"geometry":{"type":"Polygon","coordinates":[[[-78.2003,34.0504],[-78.1997,34.0504],[-78.1997,34.0508],[-78.2003,34.0508],[-78.2003,34.0504]]]}}
+]}

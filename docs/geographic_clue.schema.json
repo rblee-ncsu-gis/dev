@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Geographic clue",
+  "description": "Clue objects inside a document registry. Bounding boxes are unrotated visible-page points; survey coordinates have separate CRS and units. Verification confirms transcription evidence, not GIS registration.",
+  "type": "object",
+  "required": ["id", "document_sha256", "page_number", "bbox", "kind", "original_text", "text", "extraction_method", "verification_status", "coordinates", "author", "created_at", "history", "verification"],
+  "properties": {
+    "id": {"type": "string"},
+    "document_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "page_number": {"type": "integer", "minimum": 1},
+    "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+    "kind": {"enum": ["street_name", "subdivision_name", "project_name", "parcel_number", "lot_number", "survey_coordinate", "landmark", "sheet_number", "station_range"]},
+    "original_text": {"type": "string", "minLength": 1},
+    "text": {"type": "string", "minLength": 1},
+    "extraction_method": {"enum": ["manual", "embedded_text", "ocr"]},
+    "verification_status": {"enum": ["unverified", "verified", "rejected", "unreadable"]},
+    "coordinates": {"type": ["object", "null"], "required": ["x", "y", "crs", "units"], "properties": {"x": {"type": "number"}, "y": {"type": "number"}, "crs": {"type": ["string", "null"]}, "units": {"type": ["string", "null"]}}},
+    "author": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string"},
+    "notes": {"type": "string"},
+    "history": {"type": "array", "items": {"type": "object", "required": ["timestamp", "author", "reason", "before", "after"]}},
+    "verification": {"type": ["object", "null"], "required": ["reviewer", "reason", "timestamp"], "properties": {"reviewer_type": {"enum": ["human", "ai", "unspecified"]}, "scope": {"const": "transcription"}, "independent": {"type": "boolean"}}}
+  },
+  "allOf": [{"if": {"properties": {"kind": {"const": "survey_coordinate"}}}, "then": {"properties": {"coordinates": {"type": "object"}}}, "else": {"properties": {"coordinates": {"type": "null"}}}}]
+}
