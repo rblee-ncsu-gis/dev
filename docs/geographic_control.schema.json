@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asbuilt-matcher.local/schemas/geographic_control.schema.json",
+  "title": "Independent geographic control collection snapshot",
+  "type": "object",
+  "required": ["schema_version", "kind", "snapshot_id", "target_crs", "pixel_convention", "drawings", "records", "bound_files", "operation_history"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "geographic_control_collection"},
+    "snapshot_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "target_crs": {"enum": ["EPSG:2264", "EPSG:4326"]},
+    "pixel_convention": {"type": "string"},
+    "drawings": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["drawing_id", "source", "image"], "properties": {"drawing_id": {"type": "string"}, "source": {"$ref": "#/$defs/source"}, "image": {"type": "object", "required": ["sha256", "width", "height", "bundle_file", "page_to_pixel"], "properties": {"sha256": {"$ref": "#/$defs/hash"}, "width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1}, "bundle_file": {"type": "string"}, "page_to_pixel": {"type": "array", "items": {"type": "number"}, "minItems": 6, "maxItems": 6}}}}}},
+    "records": {"type": "array", "items": {"oneOf": [{"$ref": "#/$defs/control"}, {"$ref": "#/$defs/tie"}]}},
+    "bound_files": {"type": "object", "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "operation_history": {"type": "array", "items": {"type": "object", "required": ["operation_id", "record_id", "action", "timestamp"]}},
+    "source_run_sha256": {"$ref": "#/$defs/hash"},
+    "parent": {"type": ["object", "null"]},
+    "model_input_reference_locations": {"type": "array"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "pixel": {"description": "Original composition-image continuous X,Y; top-left edge origin, X right/Y down; null only for incomplete unverified proposals.", "type": ["array", "null"], "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+    "source": {"type": "object", "required": ["source_pdf", "pdf_identifier", "document_sha256", "sheet", "page_number", "bundle_file"], "properties": {"source_pdf": {"type": "string"}, "pdf_identifier": {"type": "string"}, "document_sha256": {"$ref": "#/$defs/hash"}, "sheet": {"type": "string"}, "page_number": {"type": "integer", "minimum": 1}, "bundle_file": {"type": "string"}}},
+    "geographic": {
+      "type": ["object", "null"],
+      "required": ["x", "y", "crs", "units"],
+      "properties": {"x": {"type": "number"}, "y": {"type": "number"}, "crs": {"enum": ["EPSG:2264", "EPSG:4326"]}, "units": {"enum": ["US survey foot", "degree"]}, "transformation": {"$ref": "#/$defs/transformation"}},
+      "allOf": [{"if": {"type": "object", "properties": {"crs": {"const": "EPSG:2264"}}}, "then": {"properties": {"units": {"const": "US survey foot"}}}}, {"if": {"type": "object", "properties": {"crs": {"const": "EPSG:4326"}}}, "then": {"properties": {"units": {"const": "degree"}, "x": {"minimum": -180, "maximum": 180}, "y": {"minimum": -80, "maximum": 80}}}}]
+    },
+    "transformation": {"description": "Externally performed, explicit datum/CRS conversion. Runtime verifies binding to original and output values; no converter is installed or automatically invoked.", "type": "object", "required": ["source_crs", "target_crs", "input_xy", "output_xy", "axis_order", "operation", "software", "software_version", "source", "performed_at", "datum_notes", "grid_notes", "ballpark"], "properties": {"source_crs": {"enum": ["EPSG:2264", "EPSG:4326"]}, "target_crs": {"enum": ["EPSG:2264", "EPSG:4326"]}, "input_xy": {"$ref": "#/$defs/pixel"}, "output_xy": {"$ref": "#/$defs/pixel"}, "axis_order": {"const": "x,y"}, "operation": {"type": "string", "minLength": 1}, "software": {"type": "string", "minLength": 1}, "software_version": {"type": "string", "minLength": 1}, "source": {"type": "string", "minLength": 1}, "performed_at": {"type": "string", "format": "date-time"}, "datum_notes": {"type": "string", "minLength": 1}, "grid_notes": {"type": "string", "minLength": 1}, "ballpark": {"const": false}, "accuracy_m": {"type": ["number", "null"], "exclusiveMinimum": 0}}},
+    "evidence": {"type": "object", "required": ["source", "source_date", "source_reference", "point_identity", "historical_consistency", "independently_determined", "model_input_landmark"], "properties": {"source": {"type": ["string", "null"]}, "source_date": {"type": ["string", "null"], "format": "date"}, "source_reference": {"type": ["string", "null"]}, "source_sha256": {"type": ["string", "null"]}, "point_identity": {"type": ["string", "null"]}, "historical_consistency": {"type": ["string", "null"]}, "independently_determined": {"type": "boolean"}, "model_input_landmark": {"type": "boolean"}}},
+    "common": {"type": "object", "required": ["id", "record_type", "description", "author", "proposer_type", "last_evidence_author", "created_at", "verification_status", "verification", "history", "original", "evidence"], "properties": {"id": {"type": "string", "minLength": 1}, "record_type": {"enum": ["control", "tie"]}, "description": {"type": "string", "minLength": 1}, "author": {"type": "string", "minLength": 1}, "proposer_type": {"enum": ["human", "ai", "unspecified"]}, "last_evidence_author": {"type": "string"}, "created_at": {"type": "string", "format": "date-time"}, "verification_status": {"enum": ["unverified", "verified", "rejected", "unreadable"]}, "verification": {"type": ["object", "null"], "required": ["reviewer", "reviewer_type", "independent", "reason", "timestamp", "scope"]}, "history": {"type": "array", "items": {"type": "object", "required": ["operation_id", "timestamp", "action", "author", "reason", "before", "after"]}}, "original": {"type": "object"}, "evidence": {"$ref": "#/$defs/evidence"}, "historical_change_notes": {"type": "string"}}},
+    "control": {"allOf": [{"$ref": "#/$defs/common"}, {"type": "object", "required": ["drawing_id", "source", "image_sha256", "pixel", "geographic", "transformed_geographic", "feature_type", "reference_feature_id", "role", "independent_of_fit", "estimated_accuracy_m"], "properties": {"record_type": {"const": "control"}, "drawing_id": {"type": "string"}, "source": {"$ref": "#/$defs/source"}, "image_sha256": {"$ref": "#/$defs/hash"}, "pixel": {"$ref": "#/$defs/pixel"}, "geographic": {"$ref": "#/$defs/geographic"}, "transformed_geographic": {"$ref": "#/$defs/geographic"}, "feature_type": {"type": ["string", "null"]}, "reference_feature_id": {"type": ["string", "null"]}, "role": {"enum": ["fit", "checkpoint"]}, "independent_of_fit": {"type": "boolean"}, "estimated_accuracy_m": {"type": ["number", "null"], "exclusiveMinimum": 0}}}], "unevaluatedProperties": false},
+    "tie": {"allOf": [{"$ref": "#/$defs/common"}, {"type": "object", "required": ["left_drawing_id", "right_drawing_id", "sources", "left_pixel", "right_pixel", "station_text", "station_verified"], "properties": {"record_type": {"const": "tie"}, "left_drawing_id": {"type": "string"}, "right_drawing_id": {"type": "string"}, "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}, "minItems": 2, "maxItems": 2}, "left_pixel": {"$ref": "#/$defs/pixel"}, "right_pixel": {"$ref": "#/$defs/pixel"}, "station_text": {"type": ["string", "null"]}, "station_verified": {"type": "boolean"}}}], "unevaluatedProperties": false}
+  }
+}

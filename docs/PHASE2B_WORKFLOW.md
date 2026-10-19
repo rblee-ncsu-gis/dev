@@ -1,5 +1,10 @@
 # Phase 2B: read-only geographic localization
 
+For independent controls and registration preparation, see
+[Phase 2B.3 control collection](PHASE2B3_CONTROL_REGISTRATION.md).
+Point proposals, independent acceptance, fitting and held-out checkpoint validation
+are separate steps. Landmarks and station values do not become controls automatically.
+
 For the current landmark experiment, see
 [Phase 2B.2 landmark narrowing](PHASE2B2_LANDMARK_NARROWING.md).
 `landmarks-import` resolves supplemental references from read-only exports;

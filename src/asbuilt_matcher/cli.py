@@ -18,6 +18,9 @@ from .geo_inventory import validate_county
 from .geo_diagnostics import diagnose_roads
 from .geo_landmarks import import_landmarks
 from .geo_narrowing import run_narrowing
+from .geo_control_review import create_collection
+from .geo_controls import apply_controls
+from .geo_registration import assess_registration
 
 
 def read_json(path):
@@ -29,6 +32,21 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Local as-built PDF intelligence pilot")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("check-environment")
+    controls = commands.add_parser('controls-init', help='Create an empty, hash-bound independent control collection and offline review')
+    controls.add_argument('run')
+    controls.add_argument('--config', required=True)
+    controls.add_argument('--output', required=True)
+    control_apply = commands.add_parser('controls-apply', help='Apply analyst control decisions into a NEW auditable snapshot')
+    control_apply.add_argument('registry')
+    control_apply.add_argument('decisions')
+    control_apply.add_argument('--output', required=True)
+    registration = commands.add_parser('registration-assess', help='Diagnose or fit only sufficiently constrained, approved per-sheet controls')
+    registration.add_argument('registry')
+    registration.add_argument('--target-crs', choices=['EPSG:2264', 'EPSG:4326'])
+    registration.add_argument('--methods', nargs='+', choices=['rigid', 'similarity', 'affine'])
+    registration.add_argument('--rigid-scale', help='JSON with independently accepted fixed metres_per_pixel and source')
+    registration.add_argument('--minimum-checkpoints', type=int, default=2)
+    registration.add_argument('--output', required=True)
     landmark_import = commands.add_parser('landmarks-import', help='Resolve supplemental landmark references from read-only county snapshots')
     landmark_import.add_argument('config')
     landmark_import.add_argument('--output', required=True)
@@ -135,6 +153,22 @@ def main(argv=None):
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     try:
+        if args.command == 'controls-init':
+            result = create_collection(args.run, args.config, args.output)
+            print(json.dumps({'drawings': len(result['drawings']), 'records': len(result['records']), 'target_crs': result['target_crs']}, indent=2))
+            return 0
+        if args.command == 'controls-apply':
+            result = apply_controls(args.registry, args.decisions, args.output)
+            print(json.dumps({'records': len(result['records']), 'snapshot_id': result['snapshot_id']}, indent=2))
+            return 0
+        if args.command == 'registration-assess':
+            result = assess_registration(args.registry, args.output, target_crs=args.target_crs, methods=args.methods,
+                                         rigid_scale=read_json(args.rigid_scale) if args.rigid_scale else None,
+                                         minimum_checkpoints=args.minimum_checkpoints)
+            print(json.dumps([{'source': d['source'], 'approved_fit_controls': d['approved_fit_controls'],
+                              'methods': [{'method': m['method'], 'status': m['status'], 'missing_evidence': m['missing_evidence']} for m in d['methods']]}
+                             for d in result['drawings']], indent=2))
+            return 0
         if args.command == 'landmarks-import':
             result = import_landmarks(args.config, args.output)
             print(json.dumps({'landmarks': len(result['landmarks']), 'processing': result['processing'], 'errors': result['errors']}, indent=2))

@@ -1,0 +1,15 @@
+{
+  "target_crs": "EPSG:2264",
+  "drawings": [
+    {
+      "drawing_id": "6bc0890c9a20468ad08e808e21cc3e3865de3b2be147b5dfbc4fe4aacb373538:1",
+      "sheet": "C7",
+      "raster_manifest": "../../outputs/phase1b-final/c7/raster-manifest.json"
+    },
+    {
+      "drawing_id": "91027547c8455ce5bc7ecda712d84900ec1e8e5815536a91859a80388595fd8b:1",
+      "sheet": "C8",
+      "raster_manifest": "../../outputs/phase1b-final/c8/raster-manifest.json"
+    }
+  ]
+}

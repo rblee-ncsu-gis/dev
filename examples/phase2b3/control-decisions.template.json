@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "registry_sha256": null,
+  "operations": [],
+  "instructions": "Blank format example only. Use the hash-bound decisions-template.json in the latest real bundle. Replace null identifiers/pixels/coordinates only after actual evidence collection. No sample values are geographic controls.",
+  "control_template": {
+    "action": "add_control",
+    "operation_id": null,
+    "author": null,
+    "reviewer_type": "human",
+    "reason": null,
+    "values": {
+      "drawing_id": null,
+      "pixel": null,
+      "geographic": null,
+      "transformed_geographic": null,
+      "feature_type": null,
+      "description": null,
+      "reference_feature_id": null,
+      "estimated_accuracy_m": null,
+      "role": "fit",
+      "independent_of_fit": false,
+      "historical_change_notes": "",
+      "evidence": {
+        "source": null,
+        "source_date": null,
+        "source_reference": null,
+        "point_identity": null,
+        "historical_consistency": null,
+        "independently_determined": false,
+        "model_input_landmark": false
+      }
+    }
+  },
+  "tie_template": {
+    "action": "add_tie",
+    "operation_id": null,
+    "author": null,
+    "reviewer_type": "human",
+    "reason": null,
+    "values": {
+      "left_drawing_id": null,
+      "right_drawing_id": null,
+      "left_pixel": null,
+      "right_pixel": null,
+      "description": null,
+      "station_text": null,
+      "station_verified": false,
+      "historical_change_notes": "",
+      "evidence": {
+        "source": null,
+        "source_date": null,
+        "source_reference": null,
+        "point_identity": null,
+        "historical_consistency": null,
+        "independently_determined": false,
+        "model_input_landmark": false
+      }
+    }
+  },
+  "review_template": {
+    "action": "review",
+    "operation_id": null,
+    "id": null,
+    "author": null,
+    "reviewer_type": "human",
+    "reason": null,
+    "independent": false,
+    "status": null
+  }
+}

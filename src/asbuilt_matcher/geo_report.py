@@ -76,7 +76,8 @@ def _map(candidate, features, origin, landmarks=None):
     x1, y1 = xy(bbox[:2])
     x2, y2 = xy(bbox[2:])
     paths.append(f'<rect x="{min(x1,x2):.2f}" y="{min(y1,y2):.2f}" width="{max(abs(x2-x1),2):.2f}" height="{max(abs(y2-y1),2):.2f}" fill="#e8a021" fill-opacity=".14" stroke="#9b5c00" stroke-dasharray="5 3"/>')
-    return '<svg viewBox="0 0 660 380" role="img" aria-label="Candidate area and reference features">' + "".join(paths) + '</svg><p class="note">Schematic local map, north up. Blue: roads; purple: subdivisions; green: parcels (context only); red: address/landmark points; other colors: administrative context; orange dashed: reference display extent. No basemap or drawing registration. Landmark points are model inputs, not independently established sheet locations.</p>'
+    return (f'<svg viewBox="0 0 660 380" data-low-x="{low[0]}" data-low-y="{low[1]}" data-scale="{scale}" role="img" aria-label="Candidate area and reference features">'
+            + "".join(paths) + '</svg><p class="note">Schematic local map, north up. Blue: roads; purple: subdivisions; green: parcels (context only); red: address/landmark points; other colors: administrative context; orange dashed: reference display extent. No basemap or drawing registration. Landmark points are model inputs, not independently established sheet locations.</p>')
 
 
 def write_html(run, catalog, output):

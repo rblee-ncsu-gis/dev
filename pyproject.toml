@@ -15,6 +15,9 @@ asbuilt-matcher = "asbuilt_matcher.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+asbuilt_matcher = ["assets/*.js"]
+
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]

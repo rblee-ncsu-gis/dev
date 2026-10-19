@@ -19,6 +19,18 @@ def now():
     return datetime.now(timezone.utc).isoformat()
 
 
+def review_identity(author, reason, reviewer_type, independent, extraction_author):
+    """Shared local review attestation for transcription and geographic evidence."""
+    if not isinstance(author, str) or not author.strip() or not isinstance(reason, str) or not reason.strip():
+        raise ValueError('Author and reason are required')
+    if reviewer_type not in {'human', 'ai', 'unspecified'} or type(independent) is not bool:
+        raise ValueError('Valid reviewer_type and boolean independent are required')
+    if independent and (reviewer_type != 'human' or author.strip().casefold() == extraction_author.strip().casefold()):
+        raise ValueError('Independent acceptance requires a human reviewer distinct from the extraction author')
+    return {'reviewer': author, 'reviewer_type': reviewer_type, 'independent': independent,
+            'reason': reason, 'timestamp': now()}
+
+
 def validate_coordinates(coordinates):
     if not isinstance(coordinates, dict) or not all(k in coordinates for k in ("x", "y", "crs", "units")):
         raise ValueError("Survey coordinate requires x, y, crs and units; use null for unknown CRS/units")
@@ -88,12 +100,7 @@ def review_entry(data, clue_id, *, author, reason, text=None, status=None,
         raise ValueError("Unknown clue ID")
     if not author.strip() or not reason.strip() or (status is not None and status not in STATUSES):
         raise ValueError("Author, reason and valid status are required")
-    if reviewer_type not in {"human", "ai", "unspecified"}:
-        raise ValueError("reviewer_type must be human, ai or unspecified")
-    if type(independent) is not bool:
-        raise ValueError("independent must be a boolean")
-    if independent and (reviewer_type != "human" or author.strip().casefold() == clue["author"].strip().casefold()):
-        raise ValueError("Independent acceptance requires a human reviewer distinct from the extraction author")
+    identity = review_identity(author, reason, reviewer_type, independent, clue['author'])
     if text is None and status is None and bbox is None and coordinates is None:
         raise ValueError("A correction or review status is required")
     before = {key: clue[key] for key in ("text", "bbox", "coordinates", "verification_status", "verification")}
@@ -111,9 +118,7 @@ def review_entry(data, clue_id, *, author, reason, text=None, status=None,
         clue["coordinates"] = coordinates
     # A correction invalidates prior verification unless explicitly reviewed again.
     clue["verification_status"] = status or "unverified"
-    clue["verification"] = {"reviewer": author, "reviewer_type": reviewer_type, "scope": "transcription",
-                            "independent": bool(independent),
-                            "reason": reason, "timestamp": now()} if status else None
+    clue["verification"] = {**identity, "scope": "transcription"} if status else None
     clue["history"].append({"timestamp": now(), "author": author, "reason": reason, "before": before,
                             "action": "corrected" if text is not None or bbox is not None or coordinates is not None else status,
                             "after": {key: clue[key] for key in before}})

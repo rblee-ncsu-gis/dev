@@ -1,5 +1,10 @@
 # Utility as-built matcher feasibility pilot
 
+Phase 2B.3 adds offline independent control collection, audited review decisions,
+image-only cross-sheet ties, and gated rigid/similarity/affine feasibility checks.
+C7/C8 have no approved controls or checkpoints and remain unregistered. Start with
+the [control collection guide](docs/PHASE2B3_CONTROL_REGISTRATION.md).
+
 Phase 2B.2 adds supplemental landmark references and a separate corridor-narrowing
 review. C7/C8 share a 371 m landmark-anchored road section; full sheet extents and
 geographic accuracy remain unverified. See the
