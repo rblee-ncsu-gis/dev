@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "scope": "AI source inspection only; independent analyst acceptance pending. Accepted station ranges remain in the original clue registries.",
+  "observations": [
+    {
+      "document_sha256": "6bc0890c9a20468ad08e808e21cc3e3865de3b2be147b5dfbc4fe4aacb373538",
+      "page_number": 1,
+      "source_pdf": "s07772.pdf",
+      "pdf_path": "../../../src/pdf/s07772.pdf",
+      "reviewer_type": "ai",
+      "verification_status": "pending",
+      "observed_at": "2026-10-19",
+      "matchlines": [
+        {
+          "edge": "right",
+          "neighbor_sheet": "C8",
+          "labels": "MATCH LINE SEE SHEET C7 / MATCH LINE SEE SHEET C8",
+          "station_value": null,
+          "note": "Shared endpoint 78+75 comes from accepted title ranges; not transcribed from matchline label."
+        }
+      ],
+      "station_direction": "Station labels increase from left to right across the plan view.",
+      "orientation": "North arrow points toward the upper left; left-to-right is approximately east-southeast. Qualitative source inspection, no azimuth fit.",
+      "plan_scale": "Graphic scale is labeled IN FEET and 1 inch = 40 feet. No alignment station equation/origin independently established.",
+      "alignment_observation": "FM line runs above the road; reciprocal matchline labels and the STA 78+46 anti-seepage collar appear near the shared ends. No utility geometry digitized.",
+      "landmark_placement": "Cemetery label near right end.",
+      "limitations": [
+        "No new clue acceptance, drawing registration or station-to-geographic conversion.",
+        "The plan contains detail beyond the title station range; no exact geographic endpoints inferred."
+      ],
+      "image_references": [
+        {
+          "path": "../../../outputs/phase2b2/source-inspection-001/c7-shared-matchline.png",
+          "sha256": "64d583ab954bd596beef32c1282cefa2a2439053fade3ca614f74d5baf612f02",
+          "bbox": [
+            2360,
+            280,
+            2490,
+            560
+          ],
+          "page_to_pixel": [
+            2.7777777777777777,
+            0,
+            0,
+            2.7777777777777777,
+            -6555,
+            -777
+          ],
+          "description": "c7-shared-matchline.png"
+        },
+        {
+          "path": "../../../outputs/phase2b2/source-inspection-001/c7-scale.png",
+          "sha256": "fa8bafd1f09dbb57d4597d7f0890f7848e86ee0589604a4e98e7d5ff9460c847",
+          "bbox": [
+            170,
+            625,
+            470,
+            735
+          ],
+          "page_to_pixel": [
+            2.7777777777777777,
+            0,
+            0,
+            2.7777777777777777,
+            -472,
+            -1736
+          ],
+          "description": "c7-scale.png"
+        },
+        {
+          "path": "../../../outputs/phase2b2/source-inspection-001/c7-north-arrow.png",
+          "sha256": "02c055a2ca84811820c96037b8126eb801a45fcdd509e460d9ea82267e692c0a",
+          "bbox": [
+            305,
+            80,
+            465,
+            335
+          ],
+          "page_to_pixel": [
+            2.7777777777777777,
+            0,
+            0,
+            2.7777777777777777,
+            -847,
+            -222
+          ],
+          "description": "c7-north-arrow.png"
+        }
+      ]
+    },
+    {
+      "document_sha256": "91027547c8455ce5bc7ecda712d84900ec1e8e5815536a91859a80388595fd8b",
+      "page_number": 1,
+      "source_pdf": "s07773.pdf",
+      "pdf_path": "../../../src/pdf/s07773.pdf",
+      "reviewer_type": "ai",
+      "verification_status": "pending",
+      "observed_at": "2026-10-19",
+      "matchlines": [
+        {
+          "edge": "left",
+          "neighbor_sheet": "C7",
+          "labels": "MATCH LINE SEE SHEET C7 / MATCH LINE SEE SHEET C8",
+          "station_value": null,
+          "note": "Shared endpoint 78+75 comes from accepted title ranges; not transcribed from matchline label."
+        }
+      ],
+      "station_direction": "Station labels increase from left to right across the plan view.",
+      "orientation": "North arrow points toward the upper left; left-to-right is approximately east-southeast. Qualitative source inspection, no azimuth fit.",
+      "plan_scale": "Graphic scale is labeled IN FEET and 1 inch = 40 feet. No alignment station equation/origin independently established.",
+      "alignment_observation": "FM line runs above the road; reciprocal matchline labels and the STA 78+46 anti-seepage collar appear near the shared ends. No utility geometry digitized.",
+      "landmark_placement": "Cemetery label near left end, Sentry Self Storage labels further right.",
+      "limitations": [
+        "No new clue acceptance, drawing registration or station-to-geographic conversion.",
+        "The plan contains detail beyond the title station range; no exact geographic endpoints inferred."
+      ],
+      "image_references": [
+        {
+          "path": "../../../outputs/phase2b2/source-inspection-001/c8-shared-matchline.png",
+          "sha256": "1947eacdbb425ac7753fd57e42c322cef87a868b763a1506ddb5e61ea0aece4f",
+          "bbox": [
+            170,
+            280,
+            330,
+            590
+          ],
+          "page_to_pixel": [
+            2.7777777777777777,
+            0,
+            0,
+            2.7777777777777777,
+            -472,
+            -777
+          ],
+          "description": "c8-shared-matchline.png"
+        },
+        {
+          "path": "../../../outputs/phase2b2/source-inspection-001/c8-scale-north.png",
+          "sha256": "41140bc543efe451a2306f4c6ab202be0b7a7fb048df162a6c86a1a042ae71d7",
+          "bbox": [
+            2150,
+            80,
+            2460,
+            335
+          ],
+          "page_to_pixel": [
+            2.7777777777777777,
+            0,
+            0,
+            2.7777777777777777,
+            -5972,
+            -222
+          ],
+          "description": "c8-scale-north.png"
+        },
+        {
+          "path": "../../../outputs/phase2b2/source-inspection-001/c8-force-main.png",
+          "sha256": "8657ff61e225152655c2f183275371abab86d83cfdb5fb7bd674150fcff42d0b",
+          "bbox": [
+            700,
+            240,
+            1050,
+            430
+          ],
+          "page_to_pixel": [
+            2.7777777777777777,
+            0,
+            0,
+            2.7777777777777777,
+            -1944,
+            -666
+          ],
+          "description": "c8-force-main.png"
+        }
+      ]
+    }
+  ]
+}

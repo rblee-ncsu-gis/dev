@@ -10,7 +10,8 @@ from .pdf_extract import write_json
 from .raster import validate_bbox
 
 CLUE_KINDS = {"street_name", "subdivision_name", "project_name", "parcel_number",
-              "lot_number", "survey_coordinate", "landmark", "sheet_number", "station_range"}
+              "lot_number", "survey_coordinate", "landmark", "sheet_number", "station_range",
+              "address", "municipal_name", "township_name", "postal_zone"}
 STATUSES = {"unverified", "verified", "rejected", "unreadable"}
 
 

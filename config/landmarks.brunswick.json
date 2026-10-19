@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "crs": "EPSG:4326",
+  "area_of_interest_bbox": [-78.27308790298015, 33.94667056811727, -78.03267543615291, 34.01721472625447],
+  "scope": "Read-only C7/C8 landmark candidate evidence. Source corroboration does not accept a drawing location.",
+  "county_sources": {
+    "addresses": {
+      "path": "../reference/brunswick_county/addresses.geojson",
+      "sha256": "59f81bc87c7b5444e688996b38feb4ff465d43f20e9bd7e2f4c5046924bc4631",
+      "crs": "EPSG:4326",
+      "crs_confirmation": "User confirmed all seven county exports as WGS84 longitude, latitude on 2026-10-19.",
+      "source_date": null,
+      "purpose": "Exact ST_NUMB, ST_NAME and POSTAL lookup. Preserve all unit addresses, comments and native GlobalIDs."
+    },
+    "parcels": {
+      "path": "../reference/brunswick_county/parcels.geojson",
+      "sha256": "7da02935ed5959dede9ecd6688915901e3c3d4e15019ab9027523542c75131e1",
+      "crs": "EPSG:4326",
+      "crs_confirmation": "User confirmed all seven county exports as WGS84 longitude, latitude on 2026-10-19.",
+      "source_date": null,
+      "purpose": "Read-only spatial containment diagnostics. No general parcel field mapping approval or facility ownership determination."
+    }
+  },
+  "landmarks": [
+    {
+      "landmark_id": "cape-fear-memorial-park",
+      "name": "CAPE FEAR MEMORIAL PARK",
+      "aliases": ["CAPE FEAR MEMORIAL PARK CEMETERY"],
+      "type": "cemetery",
+      "address": "Southport-Supply Road SE, Brunswick County, NC",
+      "geometry": {"type": "Point", "coordinates": [-78.063653, 33.9549422]},
+      "positional_accuracy_m": null,
+      "verification_status": "source_corroborated",
+      "sources": [{
+        "source": "https://www.interment.net/data/us/nc/brunswick/cemeteries-brunswick-county-north-carolina.pdf",
+        "title": "Cemeteries in Brunswick County, North Carolina",
+        "authority": "Compiled by Brunswick County GIS; hosted by Interment.net",
+        "source_date": "2019-12-09",
+        "accessed_at": "2026-10-19",
+        "page_number": 2,
+        "evidence": "The Cape Fear Memorial Park row gives latitude 33.9549422, longitude -78.063653 and Southport-Supply Rd SE. Column headings and row checked in PDF.",
+        "source_location_category": "EXACT",
+        "accuracy_note": "EXACT is a source category, not a numerical accuracy statement. Datum is not declared in the PDF; WGS84 interpretation follows the user's supplied reference lead. No survey accuracy inferred."
+      }]
+    },
+    {
+      "landmark_id": "sentry-self-storage",
+      "name": "SENTRY SELF STORAGE",
+      "aliases": [],
+      "type": "self_storage",
+      "address": "4711 Southport-Supply Rd SE, Southport, NC 28461",
+      "address_query": {"ST_NUMB": "4711", "ST_NAME": "SOUTHPORT-SUPPLY RD SE", "POSTAL": "SOUTHPORT"},
+      "geometry": null,
+      "positional_accuracy_m": null,
+      "verification_status": "source_corroborated",
+      "sources": [{
+        "source": "https://www.sentryselfstoragenc.net/",
+        "title": "Sentry Self Storage official website, Contact Us",
+        "authority": "Sentry Self Storage",
+        "source_date": null,
+        "accessed_at": "2026-10-19",
+        "evidence": "Official contact address matches the configured house number, street and postal community. The website supplies no coordinate, numerical accuracy or publication date.",
+        "accuracy_note": "Coordinates must come from actual county address features. Unit points are multiple facility-location candidates, not independent landmarks."
+      }]
+    }
+  ]
+}

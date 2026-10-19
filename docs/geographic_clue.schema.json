@@ -9,7 +9,7 @@
     "document_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "page_number": {"type": "integer", "minimum": 1},
     "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
-    "kind": {"enum": ["street_name", "subdivision_name", "project_name", "parcel_number", "lot_number", "survey_coordinate", "landmark", "sheet_number", "station_range"]},
+    "kind": {"enum": ["street_name", "subdivision_name", "project_name", "parcel_number", "lot_number", "survey_coordinate", "landmark", "sheet_number", "station_range", "address", "municipal_name", "township_name", "postal_zone"]},
     "original_text": {"type": "string", "minLength": 1},
     "text": {"type": "string", "minLength": 1},
     "extraction_method": {"enum": ["manual", "embedded_text", "ocr"]},

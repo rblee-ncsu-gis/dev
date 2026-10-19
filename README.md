@@ -1,10 +1,22 @@
 # Utility as-built matcher feasibility pilot
 
+Phase 2B.2 adds supplemental landmark references and a separate corridor-narrowing
+review. C7/C8 share a 371 m landmark-anchored road section; full sheet extents and
+geographic accuracy remain unverified. See the
+[landmark assessment and commands](docs/PHASE2B2_LANDMARK_NARROWING.md).
+
+Phase 2B.1 adds opt-in, source-scoped road aliases and corridor recovery. C7/C8 now
+recover a road-corridor candidate each; precise localization remains unverified.
+See [alias resolution and current results](docs/PHASE2B1_ALIAS_RESOLUTION.md).
+
 Phase 2B adds read-only geographic candidate-area localization from accepted
-clues and configurable WGS84 GeoJSON road/subdivision/parcel snapshots, with CSV,
-JSON and offline map review. See the [workflow and analyst export checklist](docs/PHASE2B_WORKFLOW.md)
-and [Phase 2B assessment](docs/PHASE2B_ASSESSMENT.md). County reference data and
-independent area evaluation are still needed; existing clue approvals are preserved.
+clues and seven configurable WGS84 GeoJSON reference layers, with CSV, JSON and
+offline map review. County exports are now inspected, and approved road/subdivision/
+address layers have been processed for C7/C8. The original strict run returned
+insufficient evidence; geographic accuracy remains pending independent area review.
+See the [actual county validation](docs/PHASE2B_REAL_WORLD_VALIDATION.md),
+[metadata/mapping workflow](docs/PHASE2B_WORKFLOW.md) and
+[Phase 2B assessment](docs/PHASE2B_ASSESSMENT.md). Existing clue approvals are preserved.
 
 For the first measured OCR baseline, follow
 [these instructions](docs/PHASE2A_FIRST_BASELINE.md). The local runner supports

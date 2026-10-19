@@ -1,9 +1,93 @@
 # Phase 2B: read-only geographic localization
 
+For the current landmark experiment, see
+[Phase 2B.2 landmark narrowing](PHASE2B2_LANDMARK_NARROWING.md).
+`landmarks-import` resolves supplemental references from read-only exports;
+`corridor-narrow` adds separate review localities to a frozen corridor run.
+Original candidates and clue approvals are preserved. Landmark input points and
+coarse review localities cannot establish independent drawing ground truth.
+
+For the current corridor experiment, see
+[Phase 2B.1 alias resolution](PHASE2B1_ALIAS_RESOLUTION.md). `localize --aliases`
+opts into a hash/feature/field-scoped registry. The original no-alias workflow is
+preserved. `roads-diagnose` exports actual matching field values and geometries.
+Corridor outcomes are reviewed separately from narrowed candidate areas; independent
+references can now include areas, intersections, control points and footprints.
+
 This prototype ranks geographic **areas**, not utility assets. It reads frozen local
 GeoJSON and existing accepted clue exports. All candidate decisions start pending.
 It never edits clue registries, connects to SDE, calls ArcPy, or downloads maps.
 The existing human approvals remain valid and unchanged.
+
+## County validation and approved imports
+
+The October 19 delivery has all seven files in `reference/brunswick_county/`.
+The canonical manifest is generated in `data/reference/brunswick_county/` without
+moving or editing source exports. The analyst has confirmed their WGS84 coordinate
+order and approved the initial road, subdivision and address mappings; those
+decisions are retained in `outputs/phase2b/county-analyst-decisions-001/decisions.json`.
+The actual run and remaining review tasks are in
+[PHASE2B_REAL_WORLD_VALIDATION.md](PHASE2B_REAL_WORLD_VALIDATION.md).
+
+Run from the repository root with a new output directory:
+
+```powershell
+$pythonExe = 'C:\Users\ricky.lee\AppData\Local\ESRI\conda\envs\arcgispro-py3-clone\python.exe'
+& $pythonExe scripts/run_asbuilt.py geo-validate --directory data/reference/brunswick_county --source-directory reference/brunswick_county --decisions outputs/phase2b/county-analyst-decisions-001/decisions.json --output outputs/phase2b/county-readiness-next
+```
+
+Omit `--source-directory` if files arrive in the requested directory itself. Omit
+`--decisions` for an initial unapproved inventory. Missing files are listed and
+do not make validation fail. Invalid geometry/JSON/CRS is reported and returns 1;
+the manifest and usable mapping decisions are still retained. Current parcel and
+postal geometry errors produce this nonzero outcome, separately from the three
+ready layers. Inspect `ready_datasets`, `invalid_datasets`, errors and warnings.
+
+Validation writes/updates `export_metadata.json` atomically, archives the previous
+manifest under `metadata_history/`, and freezes a copy in the new output folder.
+Hashes, fields/types, counts and geometry types are compared across runs. All
+actual property fields receive present/null/blank/missing counts. Candidate-ID
+fields also receive uniqueness/duplicate counts. Only validated geometries
+contribute to reported geographic extents. No source SDE provenance is inferred
+from file names, file timestamps or the county's usual CRS.
+
+The output folder also contains `READINESS.md`, `fields.csv`,
+`mapping-proposals.json`, `mapping-decisions.template.json`,
+`reference-config.confirmed.json` and `validation.log`. Standard-library streaming
+handles the supplied large exports without decoding the entire source file at
+once. The imported feature catalog remains memory-resident during matching;
+large candidate workloads are not yet performance validated.
+
+For **new or changed** exports, copy the decision template to a new file. Review
+all suggested fields and alternatives, then explicitly fill each approved layer's
+`fields`, `status: "confirmed"`, `reviewer_type: "human"`, reviewer, time and reason.
+Keep `dataset_sha256`. Set `crs_confirmed: true` / `output_crs: "EPSG:4326"` only
+when export provenance supports it. Unconfirmed layers stay pending. Supply known
+`source_metadata` keys: `source_feature_class`, `source_crs`, `database_version`,
+`exported_at`, `data_owner`; leave unavailable facts null. Revalidate with this
+decision file. Proposals alone never become confirmed mappings; altered source
+hashes or altered approved field assignments invalidate their reuse. This is
+reference-schema review, not repeated review of the eleven accepted clues.
+
+`reference-config.confirmed.json` includes only layers with approved hash-bound
+human mappings, CRS evidence and valid geometry. The importer checks the same
+field assignments against the approval. Explicit file CRS declarations are
+recorded as declarations; coordinate ranges alone never confirm CRS. The present
+files rely on the separately recorded analyst attestation. Geometry validity and
+CRS provenance remain distinct facts.
+
+Then import the ready subset and run the existing localization/evaluation workflow:
+
+```powershell
+& $pythonExe scripts/run_asbuilt.py geo-import outputs/phase2b/county-readiness-next/reference-config.confirmed.json --output outputs/phase2b/county-reference-next
+& $pythonExe scripts/run_asbuilt.py localize outputs/phase2a/human-acceptance-001/accepted/verified-clues.json --references outputs/phase2b/county-reference-next/references.json --settings config/geographic-ranking.json --output outputs/phase2b/county-c7-c8-next
+```
+
+Read the import summary before continuing. A partial import returns 1 but retains
+the usable catalog and all exclusion reasons. Current data exclude 509 unnamed
+features; partial status prevents definitive proposals. Keep the original county
+run when testing later aliases or region grouping. Never fill geographic evaluation
+decisions from schema approval or an expected location.
 
 ## Run the synthetic example
 
@@ -35,12 +119,24 @@ Actual field names are supplied by the analyst; placeholders are not inferred.
 | Road centerlines | LineString / MultiLineString | `id`: stable unique segment ID; `name`: full street name, or list of component fields | `aliases`: one or more fields containing alternate names/route labels (strings or arrays); `level`: comparable numeric/string crossing level |
 | Subdivisions, where available | Polygon / MultiPolygon | `id`: stable unique boundary ID; `name`: subdivision name | `aliases`: approved alternate subdivision-name fields |
 | Parcels | Polygon / MultiPolygon | `id`: stable unique feature ID | `parcel_id`: parcel identifier; `lot`: lot label/number; `address`: full address or list of component fields |
+| Addresses | Point / MultiPoint | `id`: stable unique point ID; `address`: full address, or `address_number` plus `street_name` | Street components, municipal/township/postal fields, aliases |
+| Town limits | Polygon / MultiPolygon | `id`: stable ID; `name`: municipal name | aliases |
+| Townships | Polygon / MultiPolygon | `id`: stable ID; `name`: township name | aliases |
+| Postal zones | Polygon / MultiPolygon | `id`: stable ID; `name`: postal-zone identifier | aliases |
 
 For useful parcel/lot matching, include their corresponding optional fields.
 Missing optional mappings disable that matching capability. An unmapped address is
-not guessed from other fields. Addresses are preserved as context; the existing
-clue schema has no address clue kind, so address matching is not implemented.
+not guessed from other fields. The schema now supports `address`, `municipal_name`,
+`township_name` and `postal_zone` clues through the established manual review flow.
+No new clues are fabricated from reference attributes.
 No facility IDs, utility geometry or SDE credentials are requested.
+
+Road component roles are `prefix_direction`, `street_prefix`, `street_name`,
+`street_suffix`, `suffix_direction`; addresses can add `address_number`. A full
+`name`/`address` mapping takes precedence over component composition. Subdivision
+`phase` can support an explicit `name PHASE value` label; phase digits remain
+significant. Field-name hints are proposals only: TYPE/SUFFIX, for example, can
+mean different things in different actual schemas.
 
 Supply an attribute dictionary explaining IDs, road-name components, aliases,
 route conventions, lot uniqueness/scoping, null values and road levels. Preserve
@@ -91,10 +187,11 @@ are reported individually in `import.log`/`errors`; duplicate native IDs and
 conflicting CRS declarations stop import. Partial imports cannot yield a definitive
 `proposed_area` status.
 
-The kernel uses a local spherical approximation for metre-based proximity only;
-geographic output stays WGS84. It limits aggregate reference extent to 250 km,
-latitude to +/-80 degrees, and rejects global/antimeridian geometry. This is suitable
-for a county feasibility search, not StatePlane survey measurements. CRS labels
+The kernel uses a WGS84 ellipsoidal local east/north tangent-plane projection for
+metre-based comparisons; geographic output stays WGS84. The recorded origin and
+250-km aggregate-extent limit bound its use to a county search. Latitude is limited
+to +/-80 degrees; global/antimeridian geometry is rejected. This is not a datum
+transformation or StatePlane survey registration. CRS labels
 and number-range checks cannot detect every mislabeled but plausible coordinate;
 independent export QA remains necessary.
 
@@ -124,7 +221,8 @@ clues. `NC 211 - SUPPLY ROAD` must match a real mapped name/alias; the engine do
 not discard the route number or invent a composite alias. A road-only match can
 show corridor candidates but remains insufficient to establish a drawing area.
 Project names, cemetery/storage landmarks, sheet IDs, station ranges and survey
-coordinates stay sheet context in this version. To corroborate actual locations,
+coordinates stay sheet context in this version. Address and administrative layers
+can use newly accepted typed clues, but C7/C8 currently have none. To corroborate actual locations,
 add independently reviewed second-road/subdivision/parcel clues where supported by
 the drawings, or separately scope an authoritative landmark-layer adapter. Do not
 invent extra clues. County landmark reference locations would be useful for the
@@ -141,8 +239,12 @@ prefix `LOT` is optional. Numbers/punctuation are not fuzzy-corrected.
 
 Each unique accepted `(kind, normalized text)` group contributes at most once.
 Repeated road aliases resolving to the same feature set cannot corroborate each
-other. Exact street/subdivision matches contribute 30 points, parcel IDs 40 and
-lots 18; normalized matches use a 0.93 multiplier and approximate name matches
+other. Exact street/subdivision matches contribute 30 points, parcel IDs 40,
+addresses 35 and lots 18. Municipal/township/postal clues contribute 6/4/4 supporting
+points; they cannot seed a candidate or independently qualify a single-street area.
+Derived administrative overlaps have zero points and are recorded separately as
+`spatial_context`, without inventing verified drawing clues. Normalized matches
+use a 0.93 multiplier and approximate name matches
 use `0.65 * similarity`. Multiple independent groups at a shared reference
 area/neighborhood add 10; two distinct named road geometries crossing add 20.
 A conflicting group matching elsewhere deducts 12; an unmatched group deducts 6.
@@ -158,7 +260,8 @@ can still yield broad corridors; no drawing footprint or survey registration is
 inferred. Alternate anchors for identical evidence are consolidated; distinct
 crossing neighborhoods survive.
 
-At least two independent matching groups, or an exact parcel identifier, are
+At least two independent primary matching groups, an exact parcel identifier,
+or an exact/normalized complete address are
 needed for a qualified candidate, with default area diagonal <=5 km. A top score
 gap below 10, unresolved conflicts/missing clues, broad-label safety limits or
 partial import produces ambiguity. A single street, no matches or overbroad area
@@ -214,6 +317,12 @@ localizable sheets, false-match counts, ambiguous candidates/results, insufficie
 evidence results and pending denominators. Metrics use independently classified
 candidates, never ranking scores as truth. These are local attestations, not
 authenticated signatures; synthetic test reviews remain clearly fictional.
+
+`generated_results` reports algorithm statuses before area review;
+`metric_status` distinguishes pending, partially reviewed and reviewed outcomes.
+Truth-dependent metrics use only independent geographic decisions. With no
+candidate, establish a correct area independently before calling the run a miss.
+Empty reference results and zero reviewed false matches are not accuracy claims.
 
 Expand beyond C7/C8 to unrelated projects, including ambiguous names, missing
 coverage, negative drawings and difficult scans. Freeze reference exports, run

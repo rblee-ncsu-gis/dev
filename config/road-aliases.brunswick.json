@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-19T14:49:23.238014+00:00",
+  "purpose": "Scoped candidate corridor recovery only. No analyst geographic acceptance or drawing location asserted.",
+  "entries": [
+    {
+      "id": "brunswick-nc211-southport-supply",
+      "enabled": true,
+      "status": "source_corroborated",
+      "official_names": [
+        "SOUTHPORT-SUPPLY RD",
+        "SOUTHPORT-SUPPLY RD SE"
+      ],
+      "route": {
+        "system": "NC",
+        "number": "211",
+        "source_field": "STATERDNUM"
+      },
+      "historical_names": [],
+      "analyst_approved_aliases": [],
+      "aliases": [
+        {
+          "text": "NC 211 - SUPPLY ROAD",
+          "category": "candidate_relationship"
+        },
+        {
+          "text": "NC 211",
+          "category": "route_number"
+        },
+        {
+          "text": "NC HIGHWAY 211",
+          "category": "route_number"
+        },
+        {
+          "text": "N.C. 211",
+          "category": "abbreviation"
+        },
+        {
+          "text": "NC HWY 211",
+          "category": "abbreviation"
+        },
+        {
+          "text": "NC211",
+          "category": "abbreviation"
+        },
+        {
+          "text": "Southport-Supply Road",
+          "category": "official_name"
+        },
+        {
+          "text": "Southport Supply Road SE",
+          "category": "official_name"
+        }
+      ],
+      "scope": {
+        "dataset_id": "roads",
+        "source_sha256": "82e6337b7f6970635293f368bd42294e3f742f5e588f4698b6fa8ec663e55a94",
+        "feature_ids": [
+          "{0029E73A-A78F-4F2A-9CC5-6B191A995392}",
+          "{0534562E-40D1-41F7-8499-70C9B7E47833}",
+          "{0E04E23A-6ED7-4E93-BBB2-3E808085DEC7}",
+          "{0EDD7C57-C4E1-404C-9FDD-C32BEEBC5F1F}",
+          "{104DA6F1-F11D-4AAC-80C6-9BCBC9FC6C84}",
+          "{10CC8D7D-03FD-45B6-A169-AB45F64B6E42}",
+          "{129389F8-85AF-4971-8B38-168487B11117}",
+          "{12C1A0F4-0A9E-45D9-AB23-CC191B8F0FC9}",
+          "{1544C440-E546-4E5E-9CDB-5CE279D5CB85}",
+          "{25EBC0F2-674B-4D79-8404-686D3E820FC9}",
+          "{2C5DC764-1551-4575-A571-BDEDC6D65BCE}",
+          "{2C79C250-1732-4482-BE13-33733A091173}",
+          "{3500A879-9C16-4DF2-BE1C-A76B958416F9}",
+          "{35AAB81A-DD92-4C43-AB1E-A82F09A918C1}",
+          "{35D28283-77F7-4F82-81D4-A56816CA89F0}",
+          "{37709018-1FFF-482C-8C95-DBE4FFCF65EE}",
+          "{3AC7A08F-9CE2-4875-B3E1-181FFB9559F3}",
+          "{3FD11AE1-7996-4528-B436-060C3490EA1F}",
+          "{424AD926-40BB-423A-9A6B-3ABA5E0815EE}",
+          "{43B65720-8C38-48A0-9CE4-D01F551FE00A}",
+          "{466DD667-DF42-4D22-ADD5-D93D46CCEE42}",
+          "{4A675BC2-D401-4F8C-A656-89217AC1E3CF}",
+          "{4ABB8933-0EBC-49F3-ABC9-5B1CA5D0E089}",
+          "{5252B5AB-DF65-4079-9A31-863ED1DE6742}",
+          "{56B53127-3578-41FB-B711-0F5F6862B9FD}",
+          "{56DE786A-E464-4624-A901-25780CE4BC62}",
+          "{56ED7CF2-AD4D-45AA-BBDF-194EDEDAAB75}",
+          "{58FAE6D4-E4B3-44DC-88F1-8C0FE568B7C6}",
+          "{5997764C-3443-40A8-BDB2-8A5244C345BE}",
+          "{5A8B3E69-CCC3-4E17-8194-A67749227005}",
+          "{60408113-A495-4758-8E04-6369CF5A0B5E}",
+          "{638D73CF-5449-49A5-B3A7-04FFBD7BBD07}",
+          "{6560E8F5-C81C-4448-963C-A2E5E308DC76}",
+          "{668CD53F-C4D6-481E-B269-660394425B32}",
+          "{6A78B7EB-4193-421E-9D62-50B633B3C072}",
+          "{6E5D0668-A8A1-4750-A64D-A9E599DAD04E}",
+          "{72399141-BC15-45D2-A4CB-ECF88A0893F4}",
+          "{749E6F43-94C6-43A5-AA48-069AF78D63CB}",
+          "{768085C7-BFE2-47BC-9ECC-A670C357ABC2}",
+          "{7844B03D-1F8F-49C3-BCCC-8ED078300665}",
+          "{79AF108A-5712-4706-B93C-46C65D1471AD}",
+          "{7DB7136E-E52C-497D-A697-49278961059C}",
+          "{80C5B5E6-9BA5-4AA1-8CD6-E6736592EB2E}",
+          "{8208713A-DF39-465E-9C36-5896E0E7A860}",
+          "{84EDF8E2-F544-4EF9-A84D-17438C5B20D6}",
+          "{85C59441-6E3F-49D9-9420-9CFA7C445B63}",
+          "{86EDD646-15DB-4690-8AB1-26724A84A055}",
+          "{8AC2B2D8-C6D0-4626-9BB8-E05248E3FF53}",
+          "{8C0CCE05-2344-4876-B550-3AF8AF41FA36}",
+          "{8EACA79D-2CF5-481F-B039-C5E7A9BAAB44}",
+          "{8F64A98D-3320-4505-A56D-176792E919C2}",
+          "{92DEEC8C-8D66-4EB2-B025-194C50086C3F}",
+          "{938471B4-8402-403C-81DE-6CF3F68ACF22}",
+          "{9535DAC2-D3D2-4810-83B2-2B48AC75752A}",
+          "{95AB95AA-6FEE-4175-9D5F-D38547391EA3}",
+          "{95B5EA75-F7FA-4BDF-B486-D7B2E1F87F42}",
+          "{9768E09D-3043-41D0-8FAF-CCD3327672FB}",
+          "{98397B1C-DABC-4692-A730-F67B9536B3FF}",
+          "{99B0CDAB-FD70-4D05-8B70-70C023E91839}",
+          "{9AF80FA0-D566-40E6-AA3D-DB818674E815}",
+          "{9B40EA86-5075-47D2-83D2-229EB104F47C}",
+          "{9B9D2CD7-AD20-4BBE-A287-931CD17FB293}",
+          "{9CF2DBF4-D012-40B3-A3B8-6A0046EB3BF3}",
+          "{9CF7BE66-954D-45B1-A38B-9DDDBCEDEE63}",
+          "{A21F30DE-3BA2-44C3-8179-83E7DD34E6D4}",
+          "{A708C167-BECA-44DD-8726-7969A836B79F}",
+          "{A783A814-476F-4056-A54E-781C97E6514A}",
+          "{A984944B-3DBD-42C7-8346-8D802730321D}",
+          "{AC5968B4-2FD4-4341-8A3E-0F65CDE812AA}",
+          "{AE3284BB-0169-4A15-BAC9-F04749E5A946}",
+          "{BC6DC69C-A2BF-4ECD-B6EF-9866BA9269B3}",
+          "{C2E2CA3B-0AF1-4F7B-A0FE-6ADA9883792A}",
+          "{C38AA48F-B9D9-4494-B980-F962F1A10C5B}",
+          "{C69B0FF8-80C9-46F1-868F-A8E969D87FE4}",
+          "{CE1AC0DD-FE50-44CF-A980-618A657288AE}",
+          "{CEC80786-1BD8-412C-9B53-08A3C925BC34}",
+          "{D3EF8CDF-4060-4692-BA26-A59A77C647DE}",
+          "{D65EEA11-80C7-4FF1-95F3-A1F5031FFD20}",
+          "{D672DEA4-CDBC-47A1-9C51-DA2CBF233032}",
+          "{D9F06A77-F741-4B90-AC0E-D25BA678BCAB}",
+          "{DE5BD265-05CC-452E-BC5E-B9F09CDCE2E0}",
+          "{E1F3DAB5-E2BB-490B-9315-215B1F0A2DD5}",
+          "{E6BAC25D-DF90-4D36-B54E-CE1D567F9B6B}",
+          "{E731D8DB-FE60-463A-8986-168E8B486177}",
+          "{E7F686C6-A562-41EC-A738-72574DD6188B}",
+          "{E848627C-6016-4012-8FA4-81E64062C5EA}",
+          "{ECE96BC1-42A3-470A-A677-85B7D957D7B5}",
+          "{EE8017F3-43C2-4F21-BB93-2653168D1B66}",
+          "{EF96F081-E4F8-4301-A0A9-1B79FD0D2430}",
+          "{F08BBD02-EFC1-4487-BBE0-461B5AD06548}",
+          "{F0F7789F-8ADC-4A19-8E45-C5A85350C9DA}",
+          "{F7FBFAFD-986B-4A7D-A854-61C6C243626C}",
+          "{F8EB2887-0A4A-4024-BD8C-A3C3ECB1F470}",
+          "{FBC5B152-F256-4839-A27C-F4B1EA68EF3D}"
+        ],
+        "field_values": {
+          "FULLNAME": [
+            "SOUTHPORT-SUPPLY RD",
+            "SOUTHPORT-SUPPLY RD SE"
+          ],
+          "STATERDNUM": [
+            "211"
+          ]
+        },
+        "bbox": [
+          -78.27308790298015,
+          33.94667056811727,
+          -78.03267543615291,
+          34.01721472625447
+        ]
+      },
+      "sources": [
+        {
+          "id": "county-2021",
+          "type": "official_county_publication",
+          "url": "https://www.brunswickcountync.gov/Archive/ViewFile/Item/1882",
+          "title": "Brunswick County Zoning Board of Adjustment minutes, April 8, 2021",
+          "evidence": "County minutes identify Southport-Supply Road with the NC 211 route label."
+        },
+        {
+          "id": "ncdot-2026",
+          "type": "official_ncdot_publication",
+          "url": "https://www.ncdot.gov/news/press-releases/Pages/2026/2026-06-17-nc211-construction-temporary-closures-brunswick-co.aspx",
+          "title": "N.C. 211 construction closures, June 17, 2026",
+          "evidence": "NCDOT describes the NC 211 corridor near Midway Commons using the Southport Supply Road name."
+        },
+        {
+          "id": "ncdot-2019",
+          "type": "official_ncdot_publication",
+          "url": "https://www.ncdot.gov/news/public-meetings/Pages/U-5932-2019-05-16.aspx",
+          "title": "US 17 / NC 211 interchange, May 2019",
+          "evidence": "NCDOT links the NC 211 route to the Southport Supply Road Southeast name in Brunswick County."
+        },
+        {
+          "id": "county-gis-snapshot",
+          "type": "provided_county_gis",
+          "source_sha256": "82e6337b7f6970635293f368bd42294e3f742f5e588f4698b6fa8ec663e55a94",
+          "evidence": "Exactly 94 imported county feature IDs satisfy both FULLNAME and STATERDNUM constraints; geographic scope is their actual source linework."
+        }
+      ],
+      "approval": null,
+      "limitations": [
+        "Source-corroborated candidate relationship, not independently analyst-approved alias or geographic placement.",
+        "The shortened drawing label is interpreted only together with its NC 211 route token. Generic SUPPLY ROAD is not an enabled alias.",
+        "Other route-211 roads and other counties/snapshots are outside this scope.",
+        "No historical-name equivalence or complete-route geometry claimed."
+      ]
+    }
+  ]
+}

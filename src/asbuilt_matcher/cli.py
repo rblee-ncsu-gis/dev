@@ -14,6 +14,10 @@ from .ocr_report import report_from_file
 from .geo_reference import import_references
 from .geo_report import localize
 from .geo_eval import evaluate_localization
+from .geo_inventory import validate_county
+from .geo_diagnostics import diagnose_roads
+from .geo_landmarks import import_landmarks
+from .geo_narrowing import run_narrowing
 
 
 def read_json(path):
@@ -25,6 +29,26 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Local as-built PDF intelligence pilot")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("check-environment")
+    landmark_import = commands.add_parser('landmarks-import', help='Resolve supplemental landmark references from read-only county snapshots')
+    landmark_import.add_argument('config')
+    landmark_import.add_argument('--output', required=True)
+    narrow = commands.add_parser('corridor-narrow', help='Add separate landmark review localities to a frozen corridor run')
+    narrow.add_argument('run')
+    narrow.add_argument('--landmarks', required=True)
+    narrow.add_argument('--observations', help='Pending AI source-inspection observations; never approved clues')
+    narrow.add_argument('--settings', help='JSON metre search thresholds; not positional accuracy')
+    narrow.add_argument('--output', required=True)
+    road_diagnostics=commands.add_parser('roads-diagnose',help='Inspect actual road names/routes and retain source geometries')
+    road_diagnostics.add_argument('roads')
+    road_diagnostics.add_argument('--id-field',default='GlobalID')
+    road_diagnostics.add_argument('--name-field',default='FULLNAME')
+    road_diagnostics.add_argument('--route-fields',nargs='+',default=['STATERDNUM'])
+    road_diagnostics.add_argument('--output',required=True)
+    validate_geo = commands.add_parser("geo-validate", help="Inspect county exports, update metadata and propose field mappings")
+    validate_geo.add_argument("--directory", default="data/reference/brunswick_county")
+    validate_geo.add_argument("--source-directory", help="Optional existing export location; sources are not moved")
+    validate_geo.add_argument("--decisions", help="Analyst-confirmed, hash-bound mapping/CRS/source metadata JSON")
+    validate_geo.add_argument("--output", required=True)
     geo_import = commands.add_parser("geo-import", help="Import read-only WGS84 GeoJSON using configured fields")
     geo_import.add_argument("config")
     geo_import.add_argument("--output", required=True)
@@ -32,6 +56,7 @@ def main(argv=None):
     geo.add_argument("clues", help="Existing independently accepted clue export")
     geo.add_argument("--references", help="Imported references.json; omit to inventory outstanding reference needs")
     geo.add_argument("--settings", help="JSON geographic ranking settings")
+    geo.add_argument('--aliases',help='Explicit scoped road-alias registry; never enabled implicitly')
     geo.add_argument("--output", required=True)
     geo_eval = commands.add_parser("localization-evaluate", help="Measure independently reviewed candidate areas")
     geo_eval.add_argument("run")
@@ -110,13 +135,32 @@ def main(argv=None):
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     try:
+        if args.command == 'landmarks-import':
+            result = import_landmarks(args.config, args.output)
+            print(json.dumps({'landmarks': len(result['landmarks']), 'processing': result['processing'], 'errors': result['errors']}, indent=2))
+            return 0
+        if args.command == 'corridor-narrow':
+            result = run_narrowing(args.run, args.landmarks, args.output,
+                                   settings=read_json(args.settings) if args.settings else None, observations_path=args.observations)
+            print(json.dumps([{'source_pdf': d['source_pdf'], 'status': d['narrowing_status'], 'narrowed_candidates': len(d['narrowed_candidates'])} for d in result['drawings']], indent=2))
+            return 0
+        if args.command=='roads-diagnose':
+            result=diagnose_roads(args.roads,args.output,id_field=args.id_field,name_field=args.name_field,route_fields=args.route_fields)
+            print(json.dumps({k:result[k] for k in ['total_features','related_features','route_211_features','unnamed_count','unnamed_with_route_identifier']},indent=2))
+            return 0
+        if args.command == "geo-validate":
+            result = validate_county(args.directory, args.output, source_directory=args.source_directory, decisions_path=args.decisions)
+            print(json.dumps({k:result[k] for k in ["status","missing_datasets","ready_datasets","invalid_datasets","changes"]},indent=2))
+            return 1 if result["status"] == "invalid" else 0
         if args.command == "geo-import":
             result = import_references(args.config, args.output)
-            print(json.dumps({"status": result["status"], "features": len(result["features"]), "errors": result["errors"]}, indent=2))
+            print(json.dumps({"status": result["status"], "features": len(result["features"]),
+                              "error_count":len(result['errors']),"error_examples":result['errors'][:5],
+                              "missing_datasets":result.get('missing_datasets',[])}, indent=2))
             return 1 if result["status"] == "partial" else 0
         if args.command == "localize":
             result = localize(args.clues, args.output, references_path=args.references,
-                              settings=read_json(args.settings) if args.settings else None)
+                              settings=read_json(args.settings) if args.settings else None,alias_registry_path=args.aliases)
             print(json.dumps({"status": result["status"], "drawings": [{k: d[k] for k in ["source_pdf", "page_number", "status"]} for d in result["drawings"]]}, indent=2))
             return 0
         if args.command == "localization-evaluate":

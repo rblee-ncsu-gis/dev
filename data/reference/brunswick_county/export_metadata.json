@@ -1,0 +1,3054 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-19T14:23:57.658458+00:00",
+  "expected_directory": "C:\\Users\\ricky.lee\\Documents\\dev\\data\\reference\\brunswick_county",
+  "source_directory": "C:\\Users\\ricky.lee\\Documents\\dev\\reference\\brunswick_county",
+  "datasets": [
+    {
+      "dataset": "roads",
+      "filename": "roads.geojson",
+      "path": "C:\\Users\\ricky.lee\\Documents\\dev\\reference\\brunswick_county\\roads.geojson",
+      "size_bytes": 30310759,
+      "sha256": "82e6337b7f6970635293f368bd42294e3f742f5e588f4698b6fa8ec663e55a94",
+      "feature_count": 21166,
+      "geometry_types": {
+        "LineString": 21166
+      },
+      "available_fields": [
+        "CITYLEFT",
+        "CITYRIGHT",
+        "COMMUNITYLEFT",
+        "COMMUNITYRIGHT",
+        "COUNTYLEFT",
+        "COUNTYRIGHT",
+        "ELEV_FR",
+        "ELEV_TO",
+        "ESN_LEFT",
+        "ESN_RIGHT",
+        "FIRELEFT",
+        "FIRERIGHT",
+        "FTR_CODE",
+        "FULLNAME",
+        "GlobalID",
+        "LAWLEFT",
+        "LAWRIGHT",
+        "LEFTHIGH",
+        "LEFTLOW",
+        "MSAG_LEFT",
+        "MSAG_RIGHT",
+        "NAME",
+        "OBJECTID",
+        "ONEWAYCODE",
+        "PARITYLEFT",
+        "PARITYRIGHT",
+        "PREFIX",
+        "RESCUELEFT",
+        "RESCUERIGHT",
+        "RESPAGENCY",
+        "RIGHTHIGH",
+        "RIGHTLOW",
+        "SPEEDLIMIT",
+        "STATERDNUM",
+        "STATUS",
+        "SUFFIX",
+        "SURFACETYPE",
+        "Shape_Length",
+        "TRAVELSPEED",
+        "TYPE",
+        "VERIFIED",
+        "ZIPCODELEFT",
+        "ZIPCODERIGHT",
+        "created_date",
+        "created_user",
+        "last_edited_date",
+        "last_edited_user"
+      ],
+      "field_profiles": {
+        "CITYLEFT": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 21166
+          },
+          "missing_count": 0
+        },
+        "CITYRIGHT": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 21166
+          },
+          "missing_count": 0
+        },
+        "COMMUNITYLEFT": {
+          "present_count": 21166,
+          "null_count": 7748,
+          "blank_count": 2,
+          "types": {
+            "NoneType": 7748,
+            "str": 13418
+          },
+          "missing_count": 0
+        },
+        "COMMUNITYRIGHT": {
+          "present_count": 21166,
+          "null_count": 7784,
+          "blank_count": 1,
+          "types": {
+            "NoneType": 7784,
+            "str": 13382
+          },
+          "missing_count": 0
+        },
+        "COUNTYLEFT": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 1,
+          "types": {
+            "str": 21166
+          },
+          "missing_count": 0
+        },
+        "COUNTYRIGHT": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 1,
+          "types": {
+            "str": 21166
+          },
+          "missing_count": 0
+        },
+        "ELEV_FR": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 21166
+          },
+          "missing_count": 0
+        },
+        "ELEV_TO": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 21166
+          },
+          "missing_count": 0
+        },
+        "ESN_LEFT": {
+          "present_count": 21166,
+          "null_count": 15,
+          "blank_count": 0,
+          "types": {
+            "str": 21151,
+            "NoneType": 15
+          },
+          "missing_count": 0
+        },
+        "ESN_RIGHT": {
+          "present_count": 21166,
+          "null_count": 15,
+          "blank_count": 0,
+          "types": {
+            "str": 21151,
+            "NoneType": 15
+          },
+          "missing_count": 0
+        },
+        "FIRELEFT": {
+          "present_count": 21166,
+          "null_count": 3,
+          "blank_count": 0,
+          "types": {
+            "str": 21163,
+            "NoneType": 3
+          },
+          "missing_count": 0
+        },
+        "FIRERIGHT": {
+          "present_count": 21166,
+          "null_count": 2,
+          "blank_count": 0,
+          "types": {
+            "str": 21164,
+            "NoneType": 2
+          },
+          "missing_count": 0
+        },
+        "FTR_CODE": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 21166
+          },
+          "missing_count": 0
+        },
+        "FULLNAME": {
+          "present_count": 21166,
+          "null_count": 2,
+          "blank_count": 0,
+          "types": {
+            "str": 21164,
+            "NoneType": 2
+          },
+          "missing_count": 0
+        },
+        "GlobalID": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 21166
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 21166,
+          "duplicate_nonblank_count": 0
+        },
+        "LAWLEFT": {
+          "present_count": 21166,
+          "null_count": 2,
+          "blank_count": 0,
+          "types": {
+            "str": 21164,
+            "NoneType": 2
+          },
+          "missing_count": 0
+        },
+        "LAWRIGHT": {
+          "present_count": 21166,
+          "null_count": 2,
+          "blank_count": 0,
+          "types": {
+            "str": 21164,
+            "NoneType": 2
+          },
+          "missing_count": 0
+        },
+        "LEFTHIGH": {
+          "present_count": 21166,
+          "null_count": 9,
+          "blank_count": 0,
+          "types": {
+            "int": 21157,
+            "NoneType": 9
+          },
+          "missing_count": 0
+        },
+        "LEFTLOW": {
+          "present_count": 21166,
+          "null_count": 9,
+          "blank_count": 0,
+          "types": {
+            "int": 21157,
+            "NoneType": 9
+          },
+          "missing_count": 0
+        },
+        "MSAG_LEFT": {
+          "present_count": 21166,
+          "null_count": 15,
+          "blank_count": 0,
+          "types": {
+            "str": 21151,
+            "NoneType": 15
+          },
+          "missing_count": 0
+        },
+        "MSAG_RIGHT": {
+          "present_count": 21166,
+          "null_count": 15,
+          "blank_count": 0,
+          "types": {
+            "str": 21151,
+            "NoneType": 15
+          },
+          "missing_count": 0
+        },
+        "NAME": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 21166
+          },
+          "missing_count": 0
+        },
+        "OBJECTID": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 21166
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 21166,
+          "duplicate_nonblank_count": 0
+        },
+        "ONEWAYCODE": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 21166
+          },
+          "missing_count": 0
+        },
+        "PARITYLEFT": {
+          "present_count": 21166,
+          "null_count": 48,
+          "blank_count": 0,
+          "types": {
+            "str": 21118,
+            "NoneType": 48
+          },
+          "missing_count": 0
+        },
+        "PARITYRIGHT": {
+          "present_count": 21166,
+          "null_count": 53,
+          "blank_count": 0,
+          "types": {
+            "str": 21113,
+            "NoneType": 53
+          },
+          "missing_count": 0
+        },
+        "PREFIX": {
+          "present_count": 21166,
+          "null_count": 19407,
+          "blank_count": 2,
+          "types": {
+            "NoneType": 19407,
+            "str": 1759
+          },
+          "missing_count": 0
+        },
+        "RESCUELEFT": {
+          "present_count": 21166,
+          "null_count": 2,
+          "blank_count": 0,
+          "types": {
+            "str": 21164,
+            "NoneType": 2
+          },
+          "missing_count": 0
+        },
+        "RESCUERIGHT": {
+          "present_count": 21166,
+          "null_count": 3,
+          "blank_count": 0,
+          "types": {
+            "str": 21163,
+            "NoneType": 3
+          },
+          "missing_count": 0
+        },
+        "RESPAGENCY": {
+          "present_count": 21166,
+          "null_count": 15638,
+          "blank_count": 9,
+          "types": {
+            "str": 5528,
+            "NoneType": 15638
+          },
+          "missing_count": 0
+        },
+        "RIGHTHIGH": {
+          "present_count": 21166,
+          "null_count": 10,
+          "blank_count": 0,
+          "types": {
+            "int": 21156,
+            "NoneType": 10
+          },
+          "missing_count": 0
+        },
+        "RIGHTLOW": {
+          "present_count": 21166,
+          "null_count": 9,
+          "blank_count": 0,
+          "types": {
+            "int": 21157,
+            "NoneType": 9
+          },
+          "missing_count": 0
+        },
+        "SPEEDLIMIT": {
+          "present_count": 21166,
+          "null_count": 1024,
+          "blank_count": 0,
+          "types": {
+            "int": 20142,
+            "NoneType": 1024
+          },
+          "missing_count": 0
+        },
+        "STATERDNUM": {
+          "present_count": 21166,
+          "null_count": 16008,
+          "blank_count": 0,
+          "types": {
+            "str": 5158,
+            "NoneType": 16008
+          },
+          "missing_count": 0
+        },
+        "STATUS": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 21166
+          },
+          "missing_count": 0
+        },
+        "SUFFIX": {
+          "present_count": 21166,
+          "null_count": 9868,
+          "blank_count": 1,
+          "types": {
+            "NoneType": 9868,
+            "str": 11298
+          },
+          "missing_count": 0
+        },
+        "SURFACETYPE": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 21166
+          },
+          "missing_count": 0
+        },
+        "Shape_Length": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "float": 21166
+          },
+          "missing_count": 0
+        },
+        "TRAVELSPEED": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 21166
+          },
+          "missing_count": 0
+        },
+        "TYPE": {
+          "present_count": 21166,
+          "null_count": 958,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 958,
+            "str": 20208
+          },
+          "missing_count": 0
+        },
+        "VERIFIED": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 21166
+          },
+          "missing_count": 0
+        },
+        "ZIPCODELEFT": {
+          "present_count": 21166,
+          "null_count": 1,
+          "blank_count": 0,
+          "types": {
+            "str": 21165,
+            "NoneType": 1
+          },
+          "missing_count": 0
+        },
+        "ZIPCODERIGHT": {
+          "present_count": 21166,
+          "null_count": 3,
+          "blank_count": 0,
+          "types": {
+            "str": 21163,
+            "NoneType": 3
+          },
+          "missing_count": 0
+        },
+        "created_date": {
+          "present_count": 21166,
+          "null_count": 15215,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 15215,
+            "int": 5951
+          },
+          "missing_count": 0
+        },
+        "created_user": {
+          "present_count": 21166,
+          "null_count": 15215,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 15215,
+            "str": 5951
+          },
+          "missing_count": 0
+        },
+        "last_edited_date": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 21166
+          },
+          "missing_count": 0
+        },
+        "last_edited_user": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 21166
+          },
+          "missing_count": 0
+        }
+      },
+      "extent": [
+        -78.82050681973976,
+        33.7593203571402,
+        -77.76986896750022,
+        34.36119361026661
+      ],
+      "warnings": [
+        "Source metadata not supplied: source_feature_class, source_crs, database_version, exported_at, data_owner",
+        "Mapped/proposed field FULLNAME has null, blank or missing values; see field_profiles"
+      ],
+      "errors": [],
+      "error_count": 0,
+      "source_metadata": {
+        "source_feature_class": null,
+        "source_crs": null,
+        "database_version": null,
+        "exported_at": null,
+        "data_owner": null
+      },
+      "schema": {
+        "CITYLEFT": [
+          "str"
+        ],
+        "CITYRIGHT": [
+          "str"
+        ],
+        "COMMUNITYLEFT": [
+          "NoneType",
+          "str"
+        ],
+        "COMMUNITYRIGHT": [
+          "NoneType",
+          "str"
+        ],
+        "COUNTYLEFT": [
+          "str"
+        ],
+        "COUNTYRIGHT": [
+          "str"
+        ],
+        "ELEV_FR": [
+          "int"
+        ],
+        "ELEV_TO": [
+          "int"
+        ],
+        "ESN_LEFT": [
+          "NoneType",
+          "str"
+        ],
+        "ESN_RIGHT": [
+          "NoneType",
+          "str"
+        ],
+        "FIRELEFT": [
+          "NoneType",
+          "str"
+        ],
+        "FIRERIGHT": [
+          "NoneType",
+          "str"
+        ],
+        "FTR_CODE": [
+          "int"
+        ],
+        "FULLNAME": [
+          "NoneType",
+          "str"
+        ],
+        "GlobalID": [
+          "str"
+        ],
+        "LAWLEFT": [
+          "NoneType",
+          "str"
+        ],
+        "LAWRIGHT": [
+          "NoneType",
+          "str"
+        ],
+        "LEFTHIGH": [
+          "NoneType",
+          "int"
+        ],
+        "LEFTLOW": [
+          "NoneType",
+          "int"
+        ],
+        "MSAG_LEFT": [
+          "NoneType",
+          "str"
+        ],
+        "MSAG_RIGHT": [
+          "NoneType",
+          "str"
+        ],
+        "NAME": [
+          "str"
+        ],
+        "OBJECTID": [
+          "int"
+        ],
+        "ONEWAYCODE": [
+          "str"
+        ],
+        "PARITYLEFT": [
+          "NoneType",
+          "str"
+        ],
+        "PARITYRIGHT": [
+          "NoneType",
+          "str"
+        ],
+        "PREFIX": [
+          "NoneType",
+          "str"
+        ],
+        "RESCUELEFT": [
+          "NoneType",
+          "str"
+        ],
+        "RESCUERIGHT": [
+          "NoneType",
+          "str"
+        ],
+        "RESPAGENCY": [
+          "NoneType",
+          "str"
+        ],
+        "RIGHTHIGH": [
+          "NoneType",
+          "int"
+        ],
+        "RIGHTLOW": [
+          "NoneType",
+          "int"
+        ],
+        "SPEEDLIMIT": [
+          "NoneType",
+          "int"
+        ],
+        "STATERDNUM": [
+          "NoneType",
+          "str"
+        ],
+        "STATUS": [
+          "str"
+        ],
+        "SUFFIX": [
+          "NoneType",
+          "str"
+        ],
+        "SURFACETYPE": [
+          "str"
+        ],
+        "Shape_Length": [
+          "float"
+        ],
+        "TRAVELSPEED": [
+          "int"
+        ],
+        "TYPE": [
+          "NoneType",
+          "str"
+        ],
+        "VERIFIED": [
+          "int"
+        ],
+        "ZIPCODELEFT": [
+          "NoneType",
+          "str"
+        ],
+        "ZIPCODERIGHT": [
+          "NoneType",
+          "str"
+        ],
+        "created_date": [
+          "NoneType",
+          "int"
+        ],
+        "created_user": [
+          "NoneType",
+          "str"
+        ],
+        "last_edited_date": [
+          "int"
+        ],
+        "last_edited_user": [
+          "str"
+        ]
+      },
+      "invalid_geometry_count": 0,
+      "out_of_range_geometry_count": 0,
+      "declared_geojson_name": null,
+      "coordinate_system": {
+        "intended_output_crs": "EPSG:4326",
+        "file_declaration": null,
+        "declared_crs": null,
+        "coordinate_ranges_compatible": true,
+        "confirmed_output_crs": "EPSG:4326",
+        "confirmation_basis": "analyst_attestation",
+        "analyst_confirmed": true,
+        "note": "Ranges alone cannot confirm CRS, source CRS, datum transformation or geographic correctness."
+      },
+      "mapping_proposal": {
+        "status": "proposed_only",
+        "roles": {
+          "aliases": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "id": {
+            "candidates": [
+              {
+                "field": "GlobalID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 0
+              },
+              {
+                "field": "OBJECTID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 7
+              }
+            ],
+            "status": "ambiguous"
+          },
+          "level": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "name": {
+            "candidates": [
+              {
+                "field": "FULLNAME",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 2,
+                "blank_count": 0,
+                "priority": 0
+              }
+            ],
+            "status": "suggested"
+          },
+          "prefix_direction": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "street_name": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "street_prefix": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "street_suffix": {
+            "candidates": [
+              {
+                "field": "SUFFIX",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 9868,
+                "blank_count": 1,
+                "priority": 0
+              }
+            ],
+            "status": "suggested"
+          },
+          "suffix_direction": {
+            "candidates": [],
+            "status": "unresolved"
+          }
+        },
+        "suggested_fields": {
+          "id": "GlobalID",
+          "name": "FULLNAME",
+          "street_suffix": "SUFFIX"
+        },
+        "required_mapping_resolved": true
+      },
+      "mapping_review": {
+        "dataset_sha256": "82e6337b7f6970635293f368bd42294e3f742f5e588f4698b6fa8ec663e55a94",
+        "status": "confirmed",
+        "reviewer": "analyst",
+        "reviewer_type": "human",
+        "reviewed_at": "2026-10-19T14:20:48.734652+00:00",
+        "reason": "Explicit user confirmation in chat: all seven exports are WGS84 longitude/latitude; roads GlobalID/FULLNAME, subdivisions GlobalID/SubdivisionName, addresses GlobalID/ST_ADDR approved for initial pilot. Other field mappings remain pending.",
+        "fields": {
+          "id": "GlobalID",
+          "name": "FULLNAME"
+        },
+        "crs_confirmed": true,
+        "output_crs": "EPSG:4326",
+        "source_metadata": {}
+      },
+      "important_field_quality": {
+        "FULLNAME": {
+          "present_count": 21166,
+          "null_count": 2,
+          "blank_count": 0,
+          "types": {
+            "str": 21164,
+            "NoneType": 2
+          },
+          "missing_count": 0
+        },
+        "GlobalID": {
+          "present_count": 21166,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 21166
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 21166,
+          "duplicate_nonblank_count": 0
+        }
+      },
+      "ready_for_import": true,
+      "status": "ready"
+    },
+    {
+      "dataset": "subdivisions",
+      "filename": "subdivisions.geojson",
+      "path": "C:\\Users\\ricky.lee\\Documents\\dev\\reference\\brunswick_county\\subdivisions.geojson",
+      "size_bytes": 173226889,
+      "sha256": "0e35eaa22de4d8782fce59b3badcf057310964f020d3fcd310266a5f2b9563be",
+      "feature_count": 123763,
+      "geometry_types": {
+        "Polygon": 123334,
+        "MultiPolygon": 429
+      },
+      "available_fields": [
+        "CondoBkPg",
+        "GlobalID",
+        "MapBkPg",
+        "OBJECTID",
+        "PARCEL_ID",
+        "SUBCODE",
+        "Shape_Area",
+        "Shape_Length",
+        "SubdivisionName",
+        "created_date",
+        "created_user",
+        "last_edited_date",
+        "last_edited_user"
+      ],
+      "field_profiles": {
+        "CondoBkPg": {
+          "present_count": 123763,
+          "null_count": 123286,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 123286,
+            "str": 477
+          },
+          "missing_count": 0
+        },
+        "GlobalID": {
+          "present_count": 123763,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 123763
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 123763,
+          "duplicate_nonblank_count": 0
+        },
+        "MapBkPg": {
+          "present_count": 123763,
+          "null_count": 3161,
+          "blank_count": 0,
+          "types": {
+            "str": 120602,
+            "NoneType": 3161
+          },
+          "missing_count": 0
+        },
+        "OBJECTID": {
+          "present_count": 123763,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 123763
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 123763,
+          "duplicate_nonblank_count": 0
+        },
+        "PARCEL_ID": {
+          "present_count": 123763,
+          "null_count": 325,
+          "blank_count": 574,
+          "types": {
+            "str": 123438,
+            "NoneType": 325
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 122575,
+          "duplicate_nonblank_count": 289
+        },
+        "SUBCODE": {
+          "present_count": 123763,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 123759,
+            "float": 4
+          },
+          "missing_count": 0
+        },
+        "Shape_Area": {
+          "present_count": 123763,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "float": 123763
+          },
+          "missing_count": 0
+        },
+        "Shape_Length": {
+          "present_count": 123763,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "float": 123763
+          },
+          "missing_count": 0
+        },
+        "SubdivisionName": {
+          "present_count": 123763,
+          "null_count": 507,
+          "blank_count": 0,
+          "types": {
+            "str": 123256,
+            "NoneType": 507
+          },
+          "missing_count": 0
+        },
+        "created_date": {
+          "present_count": 123763,
+          "null_count": 123763,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 123763
+          },
+          "missing_count": 0
+        },
+        "created_user": {
+          "present_count": 123763,
+          "null_count": 123763,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 123763
+          },
+          "missing_count": 0
+        },
+        "last_edited_date": {
+          "present_count": 123763,
+          "null_count": 123763,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 123763
+          },
+          "missing_count": 0
+        },
+        "last_edited_user": {
+          "present_count": 123763,
+          "null_count": 123763,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 123763
+          },
+          "missing_count": 0
+        }
+      },
+      "extent": [
+        -78.64840069729338,
+        33.842510888473655,
+        -77.94019357556105,
+        34.3681513666933
+      ],
+      "warnings": [
+        "Source metadata not supplied: source_feature_class, source_crs, database_version, exported_at, data_owner",
+        "Mapped/proposed field SubdivisionName has null, blank or missing values; see field_profiles"
+      ],
+      "errors": [],
+      "error_count": 0,
+      "source_metadata": {
+        "source_feature_class": null,
+        "source_crs": null,
+        "database_version": null,
+        "exported_at": null,
+        "data_owner": null
+      },
+      "schema": {
+        "CondoBkPg": [
+          "NoneType",
+          "str"
+        ],
+        "GlobalID": [
+          "str"
+        ],
+        "MapBkPg": [
+          "NoneType",
+          "str"
+        ],
+        "OBJECTID": [
+          "int"
+        ],
+        "PARCEL_ID": [
+          "NoneType",
+          "str"
+        ],
+        "SUBCODE": [
+          "float",
+          "int"
+        ],
+        "Shape_Area": [
+          "float"
+        ],
+        "Shape_Length": [
+          "float"
+        ],
+        "SubdivisionName": [
+          "NoneType",
+          "str"
+        ],
+        "created_date": [
+          "NoneType"
+        ],
+        "created_user": [
+          "NoneType"
+        ],
+        "last_edited_date": [
+          "NoneType"
+        ],
+        "last_edited_user": [
+          "NoneType"
+        ]
+      },
+      "invalid_geometry_count": 0,
+      "out_of_range_geometry_count": 0,
+      "declared_geojson_name": null,
+      "coordinate_system": {
+        "intended_output_crs": "EPSG:4326",
+        "file_declaration": null,
+        "declared_crs": null,
+        "coordinate_ranges_compatible": true,
+        "confirmed_output_crs": "EPSG:4326",
+        "confirmation_basis": "analyst_attestation",
+        "analyst_confirmed": true,
+        "note": "Ranges alone cannot confirm CRS, source CRS, datum transformation or geographic correctness."
+      },
+      "mapping_proposal": {
+        "status": "proposed_only",
+        "roles": {
+          "aliases": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "id": {
+            "candidates": [
+              {
+                "field": "GlobalID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 0
+              },
+              {
+                "field": "OBJECTID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 7
+              }
+            ],
+            "status": "ambiguous"
+          },
+          "name": {
+            "candidates": [
+              {
+                "field": "SubdivisionName",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 507,
+                "blank_count": 0,
+                "priority": 1
+              }
+            ],
+            "status": "suggested"
+          },
+          "phase": {
+            "candidates": [],
+            "status": "unresolved"
+          }
+        },
+        "suggested_fields": {
+          "id": "GlobalID",
+          "name": "SubdivisionName"
+        },
+        "required_mapping_resolved": true
+      },
+      "mapping_review": {
+        "dataset_sha256": "0e35eaa22de4d8782fce59b3badcf057310964f020d3fcd310266a5f2b9563be",
+        "status": "confirmed",
+        "reviewer": "analyst",
+        "reviewer_type": "human",
+        "reviewed_at": "2026-10-19T14:20:48.734652+00:00",
+        "reason": "Explicit user confirmation in chat: all seven exports are WGS84 longitude/latitude; roads GlobalID/FULLNAME, subdivisions GlobalID/SubdivisionName, addresses GlobalID/ST_ADDR approved for initial pilot. Other field mappings remain pending.",
+        "fields": {
+          "id": "GlobalID",
+          "name": "SubdivisionName"
+        },
+        "crs_confirmed": true,
+        "output_crs": "EPSG:4326",
+        "source_metadata": {}
+      },
+      "important_field_quality": {
+        "GlobalID": {
+          "present_count": 123763,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 123763
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 123763,
+          "duplicate_nonblank_count": 0
+        },
+        "SubdivisionName": {
+          "present_count": 123763,
+          "null_count": 507,
+          "blank_count": 0,
+          "types": {
+            "str": 123256,
+            "NoneType": 507
+          },
+          "missing_count": 0
+        }
+      },
+      "ready_for_import": true,
+      "status": "ready"
+    },
+    {
+      "dataset": "parcels",
+      "filename": "parcels.geojson",
+      "path": "C:\\Users\\ricky.lee\\Documents\\dev\\reference\\brunswick_county\\parcels.geojson",
+      "size_bytes": 349483833,
+      "sha256": "7da02935ed5959dede9ecd6688915901e3c3d4e15019ab9027523542c75131e1",
+      "feature_count": 169265,
+      "geometry_types": {
+        "Polygon": 168103,
+        "MultiPolygon": 1162
+      },
+      "available_fields": [
+        "CALCAC",
+        "GlobalID",
+        "OBJECTID",
+        "PARCELTYPE",
+        "PARCEL_ID",
+        "PIN",
+        "SUBCODE",
+        "Shape_Area",
+        "Shape_Length",
+        "created_date",
+        "created_user",
+        "last_edited_date",
+        "last_edited_user"
+      ],
+      "field_profiles": {
+        "CALCAC": {
+          "present_count": 169265,
+          "null_count": 1585,
+          "blank_count": 0,
+          "types": {
+            "float": 165379,
+            "int": 2301,
+            "NoneType": 1585
+          },
+          "missing_count": 0
+        },
+        "GlobalID": {
+          "present_count": 169265,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 169265
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 169265,
+          "duplicate_nonblank_count": 0
+        },
+        "OBJECTID": {
+          "present_count": 169265,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 169265
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 169265,
+          "duplicate_nonblank_count": 0
+        },
+        "PARCELTYPE": {
+          "present_count": 169265,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 169265
+          },
+          "missing_count": 0
+        },
+        "PARCEL_ID": {
+          "present_count": 169265,
+          "null_count": 2135,
+          "blank_count": 2054,
+          "types": {
+            "str": 167130,
+            "NoneType": 2135
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 165073,
+          "duplicate_nonblank_count": 3
+        },
+        "PIN": {
+          "present_count": 169265,
+          "null_count": 1927,
+          "blank_count": 1411,
+          "types": {
+            "str": 167338,
+            "NoneType": 1927
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 165890,
+          "duplicate_nonblank_count": 37
+        },
+        "SUBCODE": {
+          "present_count": 169265,
+          "null_count": 2731,
+          "blank_count": 0,
+          "types": {
+            "int": 166530,
+            "NoneType": 2731,
+            "float": 4
+          },
+          "missing_count": 0
+        },
+        "Shape_Area": {
+          "present_count": 169265,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "float": 167948,
+            "int": 1317
+          },
+          "missing_count": 0
+        },
+        "Shape_Length": {
+          "present_count": 169265,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "float": 167948,
+            "int": 1317
+          },
+          "missing_count": 0
+        },
+        "created_date": {
+          "present_count": 169265,
+          "null_count": 102495,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 102495,
+            "int": 66770
+          },
+          "missing_count": 0
+        },
+        "created_user": {
+          "present_count": 169265,
+          "null_count": 102495,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 102495,
+            "str": 66770
+          },
+          "missing_count": 0
+        },
+        "last_edited_date": {
+          "present_count": 169265,
+          "null_count": 78103,
+          "blank_count": 0,
+          "types": {
+            "int": 91162,
+            "NoneType": 78103
+          },
+          "missing_count": 0
+        },
+        "last_edited_user": {
+          "present_count": 169265,
+          "null_count": 78103,
+          "blank_count": 0,
+          "types": {
+            "str": 91162,
+            "NoneType": 78103
+          },
+          "missing_count": 0
+        }
+      },
+      "extent": [
+        -78.65093864844484,
+        33.83761173945189,
+        -77.92166691167034,
+        34.37222926550987
+      ],
+      "warnings": [
+        "Source metadata not supplied: source_feature_class, source_crs, database_version, exported_at, data_owner",
+        "Mapped/proposed field PIN has null, blank or missing values; see field_profiles"
+      ],
+      "errors": [
+        {
+          "feature_index": 118372,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118373,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118374,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118375,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118376,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118377,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118378,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118379,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118380,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118381,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118382,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118383,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118384,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118385,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118386,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118387,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118388,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118389,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118390,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118391,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118392,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118393,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118394,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118395,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118396,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118397,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118939,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118940,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118941,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118942,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 118943,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119542,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119543,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119544,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119545,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119546,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119547,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119548,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119549,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119550,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119551,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119552,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119559,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119560,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119561,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 119568,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 120176,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 120732,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 120733,
+          "error": "Empty geometry"
+        },
+        {
+          "feature_index": 120734,
+          "error": "Empty geometry"
+        }
+      ],
+      "error_count": 1317,
+      "source_metadata": {
+        "source_feature_class": null,
+        "source_crs": null,
+        "database_version": null,
+        "exported_at": null,
+        "data_owner": null
+      },
+      "schema": {
+        "CALCAC": [
+          "NoneType",
+          "float",
+          "int"
+        ],
+        "GlobalID": [
+          "str"
+        ],
+        "OBJECTID": [
+          "int"
+        ],
+        "PARCELTYPE": [
+          "int"
+        ],
+        "PARCEL_ID": [
+          "NoneType",
+          "str"
+        ],
+        "PIN": [
+          "NoneType",
+          "str"
+        ],
+        "SUBCODE": [
+          "NoneType",
+          "float",
+          "int"
+        ],
+        "Shape_Area": [
+          "float",
+          "int"
+        ],
+        "Shape_Length": [
+          "float",
+          "int"
+        ],
+        "created_date": [
+          "NoneType",
+          "int"
+        ],
+        "created_user": [
+          "NoneType",
+          "str"
+        ],
+        "last_edited_date": [
+          "NoneType",
+          "int"
+        ],
+        "last_edited_user": [
+          "NoneType",
+          "str"
+        ]
+      },
+      "invalid_geometry_count": 1317,
+      "out_of_range_geometry_count": 0,
+      "declared_geojson_name": null,
+      "coordinate_system": {
+        "intended_output_crs": "EPSG:4326",
+        "file_declaration": null,
+        "declared_crs": null,
+        "coordinate_ranges_compatible": true,
+        "confirmed_output_crs": "EPSG:4326",
+        "confirmation_basis": "analyst_attestation",
+        "analyst_confirmed": true,
+        "note": "Ranges alone cannot confirm CRS, source CRS, datum transformation or geographic correctness."
+      },
+      "mapping_proposal": {
+        "status": "proposed_only",
+        "roles": {
+          "address": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "aliases": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "id": {
+            "candidates": [
+              {
+                "field": "GlobalID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 0
+              },
+              {
+                "field": "OBJECTID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 7
+              }
+            ],
+            "status": "ambiguous"
+          },
+          "lot": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "name": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "parcel_id": {
+            "candidates": [
+              {
+                "field": "PIN",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 1927,
+                "blank_count": 1411,
+                "priority": 0
+              },
+              {
+                "field": "PARCEL_ID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 2135,
+                "blank_count": 2054,
+                "priority": 1
+              }
+            ],
+            "status": "ambiguous"
+          }
+        },
+        "suggested_fields": {
+          "id": "GlobalID",
+          "parcel_id": "PIN"
+        },
+        "required_mapping_resolved": true
+      },
+      "mapping_review": {
+        "dataset_sha256": "7da02935ed5959dede9ecd6688915901e3c3d4e15019ab9027523542c75131e1",
+        "status": "pending",
+        "reviewer": "analyst",
+        "reviewer_type": "human",
+        "reviewed_at": "2026-10-19T14:20:48.734652+00:00",
+        "reason": "Explicit user confirmation in chat: all seven exports are WGS84 longitude/latitude; roads GlobalID/FULLNAME, subdivisions GlobalID/SubdivisionName, addresses GlobalID/ST_ADDR approved for initial pilot. Other field mappings remain pending.",
+        "fields": {},
+        "crs_confirmed": true,
+        "output_crs": "EPSG:4326",
+        "source_metadata": {}
+      },
+      "important_field_quality": {
+        "GlobalID": {
+          "present_count": 169265,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 169265
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 169265,
+          "duplicate_nonblank_count": 0
+        },
+        "PIN": {
+          "present_count": 169265,
+          "null_count": 1927,
+          "blank_count": 1411,
+          "types": {
+            "str": 167338,
+            "NoneType": 1927
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 165890,
+          "duplicate_nonblank_count": 37
+        }
+      },
+      "ready_for_import": false,
+      "status": "invalid"
+    },
+    {
+      "dataset": "addresses",
+      "filename": "addresses.geojson",
+      "path": "C:\\Users\\ricky.lee\\Documents\\dev\\reference\\brunswick_county\\addresses.geojson",
+      "size_bytes": 94473960,
+      "sha256": "59f81bc87c7b5444e688996b38feb4ff465d43f20e9bd7e2f4c5046924bc4631",
+      "feature_count": 165966,
+      "geometry_types": {
+        "Point": 165966
+      },
+      "available_fields": [
+        "ANOMALY",
+        "CITY",
+        "COMMENTS",
+        "DATE_REMOVED",
+        "EXEMPTION",
+        "FTR_CODE",
+        "GlobalID",
+        "OBJECTID",
+        "POSTAL",
+        "STATUS",
+        "ST_ADDR",
+        "ST_NAME",
+        "ST_NUMB",
+        "TAX_PRIMARY",
+        "UNIT_NO",
+        "ZIPCODE",
+        "created_date",
+        "created_user",
+        "last_edited_date",
+        "last_edited_user"
+      ],
+      "field_profiles": {
+        "ANOMALY": {
+          "present_count": 165966,
+          "null_count": 160590,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 160590,
+            "int": 5376
+          },
+          "missing_count": 0
+        },
+        "CITY": {
+          "present_count": 165966,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 165966
+          },
+          "missing_count": 0
+        },
+        "COMMENTS": {
+          "present_count": 165966,
+          "null_count": 136940,
+          "blank_count": 256,
+          "types": {
+            "str": 29026,
+            "NoneType": 136940
+          },
+          "missing_count": 0
+        },
+        "DATE_REMOVED": {
+          "present_count": 165966,
+          "null_count": 165085,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 165085,
+            "int": 881
+          },
+          "missing_count": 0
+        },
+        "EXEMPTION": {
+          "present_count": 165966,
+          "null_count": 160600,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 160600,
+            "str": 5366
+          },
+          "missing_count": 0
+        },
+        "FTR_CODE": {
+          "present_count": 165966,
+          "null_count": 4985,
+          "blank_count": 17340,
+          "types": {
+            "str": 160981,
+            "NoneType": 4985
+          },
+          "missing_count": 0
+        },
+        "GlobalID": {
+          "present_count": 165966,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 165966
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 165966,
+          "duplicate_nonblank_count": 0
+        },
+        "OBJECTID": {
+          "present_count": 165966,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 165966
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 165966,
+          "duplicate_nonblank_count": 0
+        },
+        "POSTAL": {
+          "present_count": 165966,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 165966
+          },
+          "missing_count": 0
+        },
+        "STATUS": {
+          "present_count": 165966,
+          "null_count": 2,
+          "blank_count": 0,
+          "types": {
+            "str": 165964,
+            "NoneType": 2
+          },
+          "missing_count": 0
+        },
+        "ST_ADDR": {
+          "present_count": 165966,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 165966
+          },
+          "missing_count": 0
+        },
+        "ST_NAME": {
+          "present_count": 165966,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 165966
+          },
+          "missing_count": 0
+        },
+        "ST_NUMB": {
+          "present_count": 165966,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 165966
+          },
+          "missing_count": 0
+        },
+        "TAX_PRIMARY": {
+          "present_count": 165966,
+          "null_count": 198,
+          "blank_count": 0,
+          "types": {
+            "int": 165768,
+            "NoneType": 198
+          },
+          "missing_count": 0
+        },
+        "UNIT_NO": {
+          "present_count": 165966,
+          "null_count": 38409,
+          "blank_count": 111134,
+          "types": {
+            "str": 127557,
+            "NoneType": 38409
+          },
+          "missing_count": 0
+        },
+        "ZIPCODE": {
+          "present_count": 165966,
+          "null_count": 7,
+          "blank_count": 0,
+          "types": {
+            "str": 165959,
+            "NoneType": 7
+          },
+          "missing_count": 0
+        },
+        "created_date": {
+          "present_count": 165966,
+          "null_count": 112804,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 112804,
+            "int": 53162
+          },
+          "missing_count": 0
+        },
+        "created_user": {
+          "present_count": 165966,
+          "null_count": 112804,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 112804,
+            "str": 53162
+          },
+          "missing_count": 0
+        },
+        "last_edited_date": {
+          "present_count": 165966,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 165966
+          },
+          "missing_count": 0
+        },
+        "last_edited_user": {
+          "present_count": 165966,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 165966
+          },
+          "missing_count": 0
+        }
+      },
+      "extent": [
+        -78.64817327955798,
+        33.84396723459921,
+        -77.94617561099854,
+        34.36102393466744
+      ],
+      "warnings": [
+        "Source metadata not supplied: source_feature_class, source_crs, database_version, exported_at, data_owner"
+      ],
+      "errors": [],
+      "error_count": 0,
+      "source_metadata": {
+        "source_feature_class": null,
+        "source_crs": null,
+        "database_version": null,
+        "exported_at": null,
+        "data_owner": null
+      },
+      "schema": {
+        "ANOMALY": [
+          "NoneType",
+          "int"
+        ],
+        "CITY": [
+          "str"
+        ],
+        "COMMENTS": [
+          "NoneType",
+          "str"
+        ],
+        "DATE_REMOVED": [
+          "NoneType",
+          "int"
+        ],
+        "EXEMPTION": [
+          "NoneType",
+          "str"
+        ],
+        "FTR_CODE": [
+          "NoneType",
+          "str"
+        ],
+        "GlobalID": [
+          "str"
+        ],
+        "OBJECTID": [
+          "int"
+        ],
+        "POSTAL": [
+          "str"
+        ],
+        "STATUS": [
+          "NoneType",
+          "str"
+        ],
+        "ST_ADDR": [
+          "str"
+        ],
+        "ST_NAME": [
+          "str"
+        ],
+        "ST_NUMB": [
+          "str"
+        ],
+        "TAX_PRIMARY": [
+          "NoneType",
+          "int"
+        ],
+        "UNIT_NO": [
+          "NoneType",
+          "str"
+        ],
+        "ZIPCODE": [
+          "NoneType",
+          "str"
+        ],
+        "created_date": [
+          "NoneType",
+          "int"
+        ],
+        "created_user": [
+          "NoneType",
+          "str"
+        ],
+        "last_edited_date": [
+          "int"
+        ],
+        "last_edited_user": [
+          "str"
+        ]
+      },
+      "invalid_geometry_count": 0,
+      "out_of_range_geometry_count": 0,
+      "declared_geojson_name": null,
+      "coordinate_system": {
+        "intended_output_crs": "EPSG:4326",
+        "file_declaration": null,
+        "declared_crs": null,
+        "coordinate_ranges_compatible": true,
+        "confirmed_output_crs": "EPSG:4326",
+        "confirmation_basis": "analyst_attestation",
+        "analyst_confirmed": true,
+        "note": "Ranges alone cannot confirm CRS, source CRS, datum transformation or geographic correctness."
+      },
+      "mapping_proposal": {
+        "status": "proposed_only",
+        "roles": {
+          "address": {
+            "candidates": [
+              {
+                "field": "ST_ADDR",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 5
+              }
+            ],
+            "status": "suggested"
+          },
+          "address_number": {
+            "candidates": [
+              {
+                "field": "ST_NUMB",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 5
+              }
+            ],
+            "status": "suggested"
+          },
+          "aliases": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "id": {
+            "candidates": [
+              {
+                "field": "GlobalID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 0
+              },
+              {
+                "field": "OBJECTID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 7
+              }
+            ],
+            "status": "ambiguous"
+          },
+          "municipal_name": {
+            "candidates": [
+              {
+                "field": "CITY",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 3
+              }
+            ],
+            "status": "suggested"
+          },
+          "name": {
+            "candidates": [
+              {
+                "field": "ZIPCODE",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 7,
+                "blank_count": 0,
+                "priority": 10
+              }
+            ],
+            "status": "suggested"
+          },
+          "postal_zone": {
+            "candidates": [
+              {
+                "field": "ZIPCODE",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 7,
+                "blank_count": 0,
+                "priority": 1
+              }
+            ],
+            "status": "suggested"
+          },
+          "prefix_direction": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "street_name": {
+            "candidates": [
+              {
+                "field": "ST_NAME",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 1
+              }
+            ],
+            "status": "suggested"
+          },
+          "street_prefix": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "street_suffix": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "suffix_direction": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "township_name": {
+            "candidates": [],
+            "status": "unresolved"
+          }
+        },
+        "suggested_fields": {
+          "address": "ST_ADDR",
+          "address_number": "ST_NUMB",
+          "id": "GlobalID",
+          "municipal_name": "CITY",
+          "postal_zone": "ZIPCODE",
+          "street_name": "ST_NAME"
+        },
+        "required_mapping_resolved": true
+      },
+      "mapping_review": {
+        "dataset_sha256": "59f81bc87c7b5444e688996b38feb4ff465d43f20e9bd7e2f4c5046924bc4631",
+        "status": "confirmed",
+        "reviewer": "analyst",
+        "reviewer_type": "human",
+        "reviewed_at": "2026-10-19T14:20:48.734652+00:00",
+        "reason": "Explicit user confirmation in chat: all seven exports are WGS84 longitude/latitude; roads GlobalID/FULLNAME, subdivisions GlobalID/SubdivisionName, addresses GlobalID/ST_ADDR approved for initial pilot. Other field mappings remain pending.",
+        "fields": {
+          "id": "GlobalID",
+          "address": "ST_ADDR"
+        },
+        "crs_confirmed": true,
+        "output_crs": "EPSG:4326",
+        "source_metadata": {}
+      },
+      "important_field_quality": {
+        "GlobalID": {
+          "present_count": 165966,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 165966
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 165966,
+          "duplicate_nonblank_count": 0
+        },
+        "ST_ADDR": {
+          "present_count": 165966,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 165966
+          },
+          "missing_count": 0
+        }
+      },
+      "ready_for_import": true,
+      "status": "ready"
+    },
+    {
+      "dataset": "town_limits",
+      "filename": "town_limits.geojson",
+      "path": "C:\\Users\\ricky.lee\\Documents\\dev\\reference\\brunswick_county\\town_limits.geojson",
+      "size_bytes": 3939043,
+      "sha256": "04ca110448d0177937ca6ddd98c49c496a2cd10f382f269405364b8090a7c81b",
+      "feature_count": 26,
+      "geometry_types": {
+        "MultiPolygon": 17,
+        "Polygon": 9
+      },
+      "available_fields": [
+        "GlobalID",
+        "OBJECTID",
+        "STATUS",
+        "Shape_Area",
+        "Shape_Length",
+        "TYPE",
+        "created_date",
+        "created_user",
+        "last_edited_date",
+        "last_edited_user"
+      ],
+      "field_profiles": {
+        "GlobalID": {
+          "present_count": 26,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 26
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 26,
+          "duplicate_nonblank_count": 0
+        },
+        "OBJECTID": {
+          "present_count": 26,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 26
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 26,
+          "duplicate_nonblank_count": 0
+        },
+        "STATUS": {
+          "present_count": 26,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 26
+          },
+          "missing_count": 0
+        },
+        "Shape_Area": {
+          "present_count": 26,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "float": 26
+          },
+          "missing_count": 0
+        },
+        "Shape_Length": {
+          "present_count": 26,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "float": 26
+          },
+          "missing_count": 0
+        },
+        "TYPE": {
+          "present_count": 26,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 26
+          },
+          "missing_count": 0
+        },
+        "created_date": {
+          "present_count": 26,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 26
+          },
+          "missing_count": 0
+        },
+        "created_user": {
+          "present_count": 26,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 26
+          },
+          "missing_count": 0
+        },
+        "last_edited_date": {
+          "present_count": 26,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 26
+          },
+          "missing_count": 0
+        },
+        "last_edited_user": {
+          "present_count": 26,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 26
+          },
+          "missing_count": 0
+        }
+      },
+      "extent": [
+        -78.6007452363233,
+        33.84098361118611,
+        -77.95571197356469,
+        34.35680212691095
+      ],
+      "warnings": [
+        "Source metadata not supplied: source_feature_class, source_crs, database_version, exported_at, data_owner"
+      ],
+      "errors": [],
+      "error_count": 0,
+      "source_metadata": {
+        "source_feature_class": null,
+        "source_crs": null,
+        "database_version": null,
+        "exported_at": null,
+        "data_owner": null
+      },
+      "schema": {
+        "GlobalID": [
+          "str"
+        ],
+        "OBJECTID": [
+          "int"
+        ],
+        "STATUS": [
+          "str"
+        ],
+        "Shape_Area": [
+          "float"
+        ],
+        "Shape_Length": [
+          "float"
+        ],
+        "TYPE": [
+          "str"
+        ],
+        "created_date": [
+          "int"
+        ],
+        "created_user": [
+          "str"
+        ],
+        "last_edited_date": [
+          "int"
+        ],
+        "last_edited_user": [
+          "str"
+        ]
+      },
+      "invalid_geometry_count": 0,
+      "out_of_range_geometry_count": 0,
+      "declared_geojson_name": null,
+      "coordinate_system": {
+        "intended_output_crs": "EPSG:4326",
+        "file_declaration": null,
+        "declared_crs": null,
+        "coordinate_ranges_compatible": true,
+        "confirmed_output_crs": "EPSG:4326",
+        "confirmation_basis": "analyst_attestation",
+        "analyst_confirmed": true,
+        "note": "Ranges alone cannot confirm CRS, source CRS, datum transformation or geographic correctness."
+      },
+      "mapping_proposal": {
+        "status": "proposed_only",
+        "roles": {
+          "aliases": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "id": {
+            "candidates": [
+              {
+                "field": "GlobalID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 0
+              },
+              {
+                "field": "OBJECTID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 7
+              }
+            ],
+            "status": "ambiguous"
+          },
+          "name": {
+            "candidates": [],
+            "status": "unresolved"
+          }
+        },
+        "suggested_fields": {
+          "id": "GlobalID"
+        },
+        "required_mapping_resolved": false
+      },
+      "mapping_review": {
+        "dataset_sha256": "04ca110448d0177937ca6ddd98c49c496a2cd10f382f269405364b8090a7c81b",
+        "status": "pending",
+        "reviewer": "analyst",
+        "reviewer_type": "human",
+        "reviewed_at": "2026-10-19T14:20:48.734652+00:00",
+        "reason": "Explicit user confirmation in chat: all seven exports are WGS84 longitude/latitude; roads GlobalID/FULLNAME, subdivisions GlobalID/SubdivisionName, addresses GlobalID/ST_ADDR approved for initial pilot. Other field mappings remain pending.",
+        "fields": {},
+        "crs_confirmed": true,
+        "output_crs": "EPSG:4326",
+        "source_metadata": {}
+      },
+      "important_field_quality": {
+        "GlobalID": {
+          "present_count": 26,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 26
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 26,
+          "duplicate_nonblank_count": 0
+        }
+      },
+      "ready_for_import": false,
+      "status": "needs_review"
+    },
+    {
+      "dataset": "townships",
+      "filename": "townships.geojson",
+      "path": "C:\\Users\\ricky.lee\\Documents\\dev\\reference\\brunswick_county\\townships.geojson",
+      "size_bytes": 2459182,
+      "sha256": "05a41d7ad46358dafcf3ab4a90cb19a1c354e43d409b45c9122c5cf29d924de1",
+      "feature_count": 6,
+      "geometry_types": {
+        "Polygon": 6
+      },
+      "available_fields": [
+        "GlobalID",
+        "OBJECTID",
+        "Shape_Area",
+        "Shape_Length",
+        "TOWNNAME",
+        "created_date",
+        "created_user",
+        "last_edited_date",
+        "last_edited_user"
+      ],
+      "field_profiles": {
+        "GlobalID": {
+          "present_count": 6,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 6
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 6,
+          "duplicate_nonblank_count": 0
+        },
+        "OBJECTID": {
+          "present_count": 6,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 6
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 6,
+          "duplicate_nonblank_count": 0
+        },
+        "Shape_Area": {
+          "present_count": 6,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "float": 6
+          },
+          "missing_count": 0
+        },
+        "Shape_Length": {
+          "present_count": 6,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "float": 6
+          },
+          "missing_count": 0
+        },
+        "TOWNNAME": {
+          "present_count": 6,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 6
+          },
+          "missing_count": 0
+        },
+        "created_date": {
+          "present_count": 6,
+          "null_count": 6,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 6
+          },
+          "missing_count": 0
+        },
+        "created_user": {
+          "present_count": 6,
+          "null_count": 6,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 6
+          },
+          "missing_count": 0
+        },
+        "last_edited_date": {
+          "present_count": 6,
+          "null_count": 6,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 6
+          },
+          "missing_count": 0
+        },
+        "last_edited_user": {
+          "present_count": 6,
+          "null_count": 6,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 6
+          },
+          "missing_count": 0
+        }
+      },
+      "extent": [
+        -78.65093861452937,
+        33.83999274943729,
+        -77.93127915157825,
+        34.37192759593438
+      ],
+      "warnings": [
+        "Source metadata not supplied: source_feature_class, source_crs, database_version, exported_at, data_owner"
+      ],
+      "errors": [],
+      "error_count": 0,
+      "source_metadata": {
+        "source_feature_class": null,
+        "source_crs": null,
+        "database_version": null,
+        "exported_at": null,
+        "data_owner": null
+      },
+      "schema": {
+        "GlobalID": [
+          "str"
+        ],
+        "OBJECTID": [
+          "int"
+        ],
+        "Shape_Area": [
+          "float"
+        ],
+        "Shape_Length": [
+          "float"
+        ],
+        "TOWNNAME": [
+          "str"
+        ],
+        "created_date": [
+          "NoneType"
+        ],
+        "created_user": [
+          "NoneType"
+        ],
+        "last_edited_date": [
+          "NoneType"
+        ],
+        "last_edited_user": [
+          "NoneType"
+        ]
+      },
+      "invalid_geometry_count": 0,
+      "out_of_range_geometry_count": 0,
+      "declared_geojson_name": null,
+      "coordinate_system": {
+        "intended_output_crs": "EPSG:4326",
+        "file_declaration": null,
+        "declared_crs": null,
+        "coordinate_ranges_compatible": true,
+        "confirmed_output_crs": "EPSG:4326",
+        "confirmation_basis": "analyst_attestation",
+        "analyst_confirmed": true,
+        "note": "Ranges alone cannot confirm CRS, source CRS, datum transformation or geographic correctness."
+      },
+      "mapping_proposal": {
+        "status": "proposed_only",
+        "roles": {
+          "aliases": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "id": {
+            "candidates": [
+              {
+                "field": "GlobalID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 0
+              },
+              {
+                "field": "OBJECTID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 7
+              }
+            ],
+            "status": "ambiguous"
+          },
+          "name": {
+            "candidates": [
+              {
+                "field": "TOWNNAME",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 3
+              }
+            ],
+            "status": "suggested"
+          }
+        },
+        "suggested_fields": {
+          "id": "GlobalID",
+          "name": "TOWNNAME"
+        },
+        "required_mapping_resolved": true
+      },
+      "mapping_review": {
+        "dataset_sha256": "05a41d7ad46358dafcf3ab4a90cb19a1c354e43d409b45c9122c5cf29d924de1",
+        "status": "pending",
+        "reviewer": "analyst",
+        "reviewer_type": "human",
+        "reviewed_at": "2026-10-19T14:20:48.734652+00:00",
+        "reason": "Explicit user confirmation in chat: all seven exports are WGS84 longitude/latitude; roads GlobalID/FULLNAME, subdivisions GlobalID/SubdivisionName, addresses GlobalID/ST_ADDR approved for initial pilot. Other field mappings remain pending.",
+        "fields": {},
+        "crs_confirmed": true,
+        "output_crs": "EPSG:4326",
+        "source_metadata": {}
+      },
+      "important_field_quality": {
+        "GlobalID": {
+          "present_count": 6,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 6
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 6,
+          "duplicate_nonblank_count": 0
+        },
+        "TOWNNAME": {
+          "present_count": 6,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 6
+          },
+          "missing_count": 0
+        }
+      },
+      "ready_for_import": false,
+      "status": "needs_review"
+    },
+    {
+      "dataset": "postal_zones",
+      "filename": "postal_zones.geojson",
+      "path": "C:\\Users\\ricky.lee\\Documents\\dev\\reference\\brunswick_county\\postal_zones.geojson",
+      "size_bytes": 1826144,
+      "sha256": "4996701a0130da63a99d6e0783487dc65e69b2ff521f8324833bba245b4122a1",
+      "feature_count": 15,
+      "geometry_types": {
+        "Polygon": 12,
+        "MultiPolygon": 3
+      },
+      "available_fields": [
+        "GlobalID",
+        "NAME",
+        "OBJECTID",
+        "Shape_Area",
+        "Shape_Length",
+        "ZipCode",
+        "created_date",
+        "created_user",
+        "last_edited_date",
+        "last_edited_user"
+      ],
+      "field_profiles": {
+        "GlobalID": {
+          "present_count": 15,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 15
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 15,
+          "duplicate_nonblank_count": 0
+        },
+        "NAME": {
+          "present_count": 15,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 15
+          },
+          "missing_count": 0
+        },
+        "OBJECTID": {
+          "present_count": 15,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 15
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 15,
+          "duplicate_nonblank_count": 0
+        },
+        "Shape_Area": {
+          "present_count": 15,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "float": 15
+          },
+          "missing_count": 0
+        },
+        "Shape_Length": {
+          "present_count": 15,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "float": 15
+          },
+          "missing_count": 0
+        },
+        "ZipCode": {
+          "present_count": 15,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 15
+          },
+          "missing_count": 0
+        },
+        "created_date": {
+          "present_count": 15,
+          "null_count": 13,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 13,
+            "int": 2
+          },
+          "missing_count": 0
+        },
+        "created_user": {
+          "present_count": 15,
+          "null_count": 13,
+          "blank_count": 0,
+          "types": {
+            "NoneType": 13,
+            "str": 2
+          },
+          "missing_count": 0
+        },
+        "last_edited_date": {
+          "present_count": 15,
+          "null_count": 1,
+          "blank_count": 0,
+          "types": {
+            "int": 14,
+            "NoneType": 1
+          },
+          "missing_count": 0
+        },
+        "last_edited_user": {
+          "present_count": 15,
+          "null_count": 1,
+          "blank_count": 0,
+          "types": {
+            "str": 14,
+            "NoneType": 1
+          },
+          "missing_count": 0
+        }
+      },
+      "extent": [
+        -78.65093865930285,
+        33.851336985617195,
+        -77.93127915157825,
+        34.37192759593078
+      ],
+      "warnings": [
+        "Source metadata not supplied: source_feature_class, source_crs, database_version, exported_at, data_owner"
+      ],
+      "errors": [
+        {
+          "feature_index": 3,
+          "error": "Too few positions"
+        }
+      ],
+      "error_count": 1,
+      "source_metadata": {
+        "source_feature_class": null,
+        "source_crs": null,
+        "database_version": null,
+        "exported_at": null,
+        "data_owner": null
+      },
+      "schema": {
+        "GlobalID": [
+          "str"
+        ],
+        "NAME": [
+          "str"
+        ],
+        "OBJECTID": [
+          "int"
+        ],
+        "Shape_Area": [
+          "float"
+        ],
+        "Shape_Length": [
+          "float"
+        ],
+        "ZipCode": [
+          "int"
+        ],
+        "created_date": [
+          "NoneType",
+          "int"
+        ],
+        "created_user": [
+          "NoneType",
+          "str"
+        ],
+        "last_edited_date": [
+          "NoneType",
+          "int"
+        ],
+        "last_edited_user": [
+          "NoneType",
+          "str"
+        ]
+      },
+      "invalid_geometry_count": 1,
+      "out_of_range_geometry_count": 0,
+      "declared_geojson_name": null,
+      "coordinate_system": {
+        "intended_output_crs": "EPSG:4326",
+        "file_declaration": null,
+        "declared_crs": null,
+        "coordinate_ranges_compatible": true,
+        "confirmed_output_crs": "EPSG:4326",
+        "confirmation_basis": "analyst_attestation",
+        "analyst_confirmed": true,
+        "note": "Ranges alone cannot confirm CRS, source CRS, datum transformation or geographic correctness."
+      },
+      "mapping_proposal": {
+        "status": "proposed_only",
+        "roles": {
+          "aliases": {
+            "candidates": [],
+            "status": "unresolved"
+          },
+          "id": {
+            "candidates": [
+              {
+                "field": "GlobalID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 0
+              },
+              {
+                "field": "OBJECTID",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 7
+              }
+            ],
+            "status": "ambiguous"
+          },
+          "name": {
+            "candidates": [
+              {
+                "field": "ZipCode",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 1
+              },
+              {
+                "field": "NAME",
+                "basis": "field-name hint only; semantics require analyst confirmation",
+                "missing_count": 0,
+                "null_count": 0,
+                "blank_count": 0,
+                "priority": 4
+              }
+            ],
+            "status": "ambiguous"
+          }
+        },
+        "suggested_fields": {
+          "id": "GlobalID",
+          "name": "ZipCode"
+        },
+        "required_mapping_resolved": true
+      },
+      "mapping_review": {
+        "dataset_sha256": "4996701a0130da63a99d6e0783487dc65e69b2ff521f8324833bba245b4122a1",
+        "status": "pending",
+        "reviewer": "analyst",
+        "reviewer_type": "human",
+        "reviewed_at": "2026-10-19T14:20:48.734652+00:00",
+        "reason": "Explicit user confirmation in chat: all seven exports are WGS84 longitude/latitude; roads GlobalID/FULLNAME, subdivisions GlobalID/SubdivisionName, addresses GlobalID/ST_ADDR approved for initial pilot. Other field mappings remain pending.",
+        "fields": {},
+        "crs_confirmed": true,
+        "output_crs": "EPSG:4326",
+        "source_metadata": {}
+      },
+      "important_field_quality": {
+        "GlobalID": {
+          "present_count": 15,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "str": 15
+          },
+          "missing_count": 0,
+          "unique_nonblank_count": 15,
+          "duplicate_nonblank_count": 0
+        },
+        "ZipCode": {
+          "present_count": 15,
+          "null_count": 0,
+          "blank_count": 0,
+          "types": {
+            "int": 15
+          },
+          "missing_count": 0
+        }
+      },
+      "ready_for_import": false,
+      "status": "invalid"
+    }
+  ],
+  "missing_datasets": [],
+  "changes": [],
+  "status": "invalid",
+  "real_world_accuracy_measured": false,
+  "invalid_datasets": [
+    "parcels",
+    "postal_zones"
+  ],
+  "ready_datasets": [
+    "roads",
+    "subdivisions",
+    "addresses"
+  ],
+  "previous_manifest": {
+    "path": "C:\\Users\\ricky.lee\\Documents\\dev\\data\\reference\\brunswick_county\\metadata_history\\export_metadata-e6a9f8336d067a46b03508e5e08d95590a4c70e5300647f9fed63ffb75c1b9a9.json",
+    "sha256": "e6a9f8336d067a46b03508e5e08d95590a4c70e5300647f9fed63ffb75c1b9a9"
+  }
+}

@@ -4,3 +4,5 @@ pytest-cache-files-*/
 *.egg-info/
 .venv/
 outputs/
+/reference/brunswick_county/*.geojson
+/data/reference/brunswick_county/*.geojson

@@ -1,5 +1,41 @@
 # Phase 2B: read-only geographic localization prototype
 
+Latest continuation: [Phase 2B.1 alias resolution](PHASE2B1_ALIAS_RESOLUTION.md)
+recovers one scoped road-corridor candidate for each sheet while preserving the
+zero-candidate baseline below. Corridor recovery is separate from independently
+verified drawing localization; geographic accuracy remains unmeasured.
+
+## Authoritative integration update — October 19, 2026
+
+All seven county exports are now present and inspected. The analyst confirmed
+WGS84 output for all seven and approved GlobalID/FULLNAME (roads),
+GlobalID/SubdivisionName (subdivisions) and GlobalID/ST_ADDR (addresses).
+The three layers yielded **310,386 usable features**, excluding 509 unnamed
+road/subdivision features. Parcels have 1,317 geometry errors; postal zones have
+one. Remaining field mappings and original source provenance are pending.
+
+The first actual county run completed for C7/C8. Both sheets returned
+**insufficient_evidence with zero candidates**. Their accepted NC 211 / Supply Road
+label does not match the approved current road-name field. Related
+SOUTHPORT-SUPPLY RD names are inspection findings, not approved aliases or
+geographic matches. All eleven clue decisions and original rankings are preserved.
+
+No independent geographic-area decision has been supplied, so top-1/top-3,
+correct-area rank, false-match rates and geographic accuracy remain unmeasured.
+The suite now passes **159 tests**. Seven-layer import, automatic metadata/history,
+mapping proposals/confirmation, address evidence and administrative context are
+implemented without new packages, ArcPy or environment changes.
+
+Read [the actual county validation report](PHASE2B_REAL_WORLD_VALIDATION.md) for
+counts, errors, frozen outputs and next tasks. Prioritize an authoritative
+road-alias/route decision and independent correct-area references before utility
+recognition or asset matching.
+
+The following October 16 assessment is retained as the historical synthetic
+milestone, before the county exports and the current integration run.
+
+---
+
 Assessment date: October 16, 2026.
 
 ## Management outcome
