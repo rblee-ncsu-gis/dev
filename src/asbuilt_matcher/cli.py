@@ -21,6 +21,7 @@ from .geo_narrowing import run_narrowing
 from .geo_control_review import create_collection
 from .geo_controls import apply_controls
 from .geo_registration import assess_registration
+from .pdf_study import run_study, apply_study_review
 
 
 def read_json(path):
@@ -32,6 +33,13 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Local as-built PDF intelligence pilot")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("check-environment")
+    study = commands.add_parser('pdf-study', help='Coverage-aware representative PDF inspection; preserves prior batch behavior')
+    study.add_argument('config', help='JSON with input_directory resolved relative to this config file')
+    study.add_argument('--output', required=True)
+    study_review = commands.add_parser('pdf-study-review', help='Apply hash-bound classifications into a NEW review snapshot')
+    study_review.add_argument('inspection', help='inspection.json or a previous classification-review.json')
+    study_review.add_argument('decisions')
+    study_review.add_argument('--output', required=True)
     controls = commands.add_parser('controls-init', help='Create an empty, hash-bound independent control collection and offline review')
     controls.add_argument('run')
     controls.add_argument('--config', required=True)
@@ -153,6 +161,14 @@ def main(argv=None):
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     try:
+        if args.command == 'pdf-study':
+            result = run_study(args.config, args.output)
+            print(json.dumps({'status': result['status'], 'documents': len(result['documents']), 'summary': result['summary'], 'errors': result['errors']}, indent=2))
+            return 1 if result['status'] == 'partial' else 0
+        if args.command == 'pdf-study-review':
+            result = apply_study_review(args.inspection, args.decisions, args.output)
+            print(json.dumps({'snapshot_id': result['snapshot_id'], 'independently_accepted_pages': result['independently_accepted_pages']}, indent=2))
+            return 0
         if args.command == 'controls-init':
             result = create_collection(args.run, args.config, args.output)
             print(json.dumps({'drawings': len(result['drawings']), 'records': len(result['records']), 'target_crs': result['target_crs']}, indent=2))

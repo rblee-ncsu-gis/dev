@@ -1,5 +1,13 @@
 # Utility as-built matcher feasibility pilot
 
+Phase 3A adds coverage-aware classification and native text/vector/annotation
+inspection, preserving legacy extraction and prior geographic evidence. The selected
+26 PDFs contain 75 pages: 69 predominantly raster and six predominantly vector.
+Start with the [study findings and commands](docs/PHASE3A_PDF_CLASSIFICATION.md),
+[processing architecture](docs/PHASE3A_PROCESSING_ARCHITECTURE.md), and
+[sample input configuration](config/pdf-study.json). Classifications and scale
+candidates await independent analyst review; no geographic registration is performed.
+
 Phase 2B.3 adds offline independent control collection, audited review decisions,
 image-only cross-sheet ties, and gated rigid/similarity/affine feasibility checks.
 C7/C8 have no approved controls or checkpoints and remain unregistered. Start with
