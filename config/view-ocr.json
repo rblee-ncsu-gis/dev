@@ -1,0 +1,12 @@
+{
+  "language": "eng",
+  "psm": 11,
+  "oem": 1,
+  "timeout_seconds": 60,
+  "max_pixels": 40000000,
+  "variants": [
+    {"id": "baseline"},
+    {"id": "gray", "grayscale": true},
+    {"id": "threshold", "grayscale": true, "threshold": 160}
+  ]
+}

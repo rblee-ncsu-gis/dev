@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:asbuiltmatcher:arcgis-view-handoff:1",
+  "title": "Unregistered analyst-accepted engineering view preparation handoff",
+  "type": "object",
+  "required": ["schema_version", "kind", "page_coordinates", "registry_sha256", "registered", "map_crs", "intended_future_crs", "views", "pending_view_ids"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "arcgis_view_handoff"},
+    "page_coordinates": {"const": {"units": "PDF point", "points_per_inch": 72, "origin": "visible_page_top_left", "rotation": "unrotated", "x_axis": "right", "y_axis": "down", "map_crs": null}},
+    "registry_sha256": {"$ref": "#/$defs/hash"},
+    "registered": {"const": false},
+    "map_crs": {"type": "null"},
+    "intended_future_crs": {"const": "EPSG:2264"},
+    "pending_view_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "views": {"type": "array", "items": {"$ref": "#/$defs/view"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "matrix": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "number"}},
+    "bbox": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number"}},
+    "view": {
+      "type": "object",
+      "required": ["view_id", "view_revision", "source", "accepted_view", "acceptance", "raster", "view_page_to_image", "view_local_points_to_image", "native_evidence", "ocr_evidence", "scale", "scale_evidence", "control_references", "locality_hint", "registered", "map_crs", "intended_future_crs", "tiff_preparation", "limitations"],
+      "properties": {
+        "view_id": {"type": "string", "minLength": 1},
+        "view_revision": {"$ref": "#/$defs/hash"},
+        "source": {
+          "type": "object", "required": ["source_pdf", "source_path", "document_sha256", "page_number"],
+          "properties": {"source_pdf": {"type": "string"}, "source_path": {"type": "string"}, "document_sha256": {"$ref": "#/$defs/hash"}, "page_number": {"type": "integer", "minimum": 1}}
+        },
+        "accepted_view": {
+          "type": "object", "required": ["bbox", "view_type", "reading_orientation", "engineering_relevance", "scale_mode", "distortion_notes"],
+          "properties": {
+            "bbox": {"$ref": "#/$defs/bbox", "description": "Unrotated visible-page points; top-left origin; 72 points/inch; no geographic coordinates."},
+            "view_type": {"enum": ["engineering_plan", "engineering_profile", "subdivision_plat", "detail_inset"]},
+            "reading_orientation": {"enum": [0, 90, 180, 270]},
+            "engineering_relevance": {"const": "engineering"},
+            "scale_mode": {"enum": ["unknown", "isotropic", "anisotropic", "not_to_scale"]},
+            "distortion_notes": {"type": "string"}
+          }, "additionalProperties": false
+        },
+        "acceptance": {
+          "type": "object", "required": ["reviewer", "reviewer_type", "independent", "reason", "timestamp"],
+          "properties": {"reviewer": {"type": "string", "minLength": 1}, "reviewer_type": {"const": "human"}, "independent": {"const": true}, "reason": {"type": "string", "minLength": 1}, "timestamp": {"type": "string", "format": "date-time"}}
+        },
+        "raster": {
+          "type": "object", "required": ["file", "sha256", "width", "height", "page_to_pixel", "pixel_to_page", "includes_annotations", "map_crs", "format"],
+          "properties": {"file": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}, "width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1}, "page_to_pixel": {"$ref": "#/$defs/matrix"}, "pixel_to_page": {"$ref": "#/$defs/matrix"}, "includes_annotations": {"const": true}, "map_crs": {"type": "null"}, "format": {"const": "png"}}
+        },
+        "view_page_to_image": {"$ref": "#/$defs/matrix"},
+        "view_local_points_to_image": {"$ref": "#/$defs/matrix"},
+        "native_evidence": {"type": "object", "required": ["text", "vectors"]},
+        "scale_evidence": {"type": "array", "items": {"type": "object", "required": ["id", "spec", "original", "verification_status", "verification", "history"]}},
+        "ocr_evidence": {"type": ["object", "null"]},
+        "scale": {
+          "type": "object", "required": ["status", "axes", "validation", "geographic_registration", "map_crs"],
+          "properties": {"status": {"enum": ["unresolved", "not_to_scale", "not_applicable_to_engineering_calibration", "conflicting_evidence", "calibrated_effective_view_scale"]}, "axes": {"type": "object"}, "validation": {"type": "object"}, "geographic_registration": {"const": false}, "map_crs": {"type": "null"}}
+        },
+        "control_references": {"type": "array", "description": "References to the existing Phase 2B.3 registry and original composition frame; no crop pixels are silently promoted to control pixels."},
+        "locality_hint": {"type": ["object", "null"], "description": "Model-input context only; never an independently verified view footprint."},
+        "registered": {"const": false},
+        "map_crs": {"type": "null"},
+        "intended_future_crs": {"const": "EPSG:2264"},
+        "tiff_preparation": {"type": "object", "required": ["input", "output_format", "preserve_annotations", "assign_map_crs"], "properties": {"output_format": {"const": "TIFF"}, "preserve_annotations": {"const": true}, "assign_map_crs": {"const": false}}},
+        "limitations": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

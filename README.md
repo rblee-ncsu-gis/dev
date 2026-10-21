@@ -1,5 +1,10 @@
 # Utility as-built matcher feasibility pilot
 
+Phase 3B adds a nine-view pilot with offline boundary/orientation review, separate
+scale evidence and guarded calibration, selective OCR comparisons, and a versioned
+unregistered ArcGIS handoff. No real views/scales have been accepted. Start with the
+[view and scale workflow](docs/PHASE3B_VIEW_SCALE_CALIBRATION.md).
+
 Phase 3A adds coverage-aware classification and native text/vector/annotation
 inspection, preserving legacy extraction and prior geographic evidence. The selected
 26 PDFs contain 75 pages: 69 predominantly raster and six predominantly vector.

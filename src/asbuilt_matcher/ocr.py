@@ -134,6 +134,11 @@ def load_images(evidence_path):
                            "source_pdf": row["source_pdf"], "document_sha256": row["document_sha256"],
                            "page_number": row["page_number"], **{k: metadata[k] for k in (
                                "width", "height", "effective_dpi", "page_to_pixel")}})
+    elif data.get('kind') == 'view_ocr_targets':
+        # Phase 3B supplies composition-correct targets without any reference text.
+        fields = ('id', 'path', 'sha256', 'source_pdf', 'document_sha256', 'page_number',
+                  'width', 'height', 'effective_dpi', 'page_to_pixel')
+        images = [{k: row[k] for k in fields} for row in data['images']]
     elif "pages" in data and "source" in data:
         for page in data["pages"]:
             for kind, metadata in [("full", page.get("full_page"))] + [(c["id"], c) for c in page.get("crops", [])]:

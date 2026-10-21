@@ -22,6 +22,7 @@ from .geo_control_review import create_collection
 from .geo_controls import apply_controls
 from .geo_registration import assess_registration
 from .pdf_study import run_study, apply_study_review
+from .views import create_views, apply_views, run_view_ocr
 
 
 def read_json(path):
@@ -33,6 +34,19 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Local as-built PDF intelligence pilot")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("check-environment")
+    view_init = commands.add_parser('views-init', help='Create a proposed pilot of engineering views from an existing study')
+    view_init.add_argument('study')
+    view_init.add_argument('--config', required=True)
+    view_init.add_argument('--output', required=True)
+    view_apply = commands.add_parser('views-apply', help='Apply hash-bound view/scale decisions into a new snapshot')
+    view_apply.add_argument('registry')
+    view_apply.add_argument('decisions')
+    view_apply.add_argument('--output', required=True)
+    view_ocr = commands.add_parser('views-ocr', help='Reuse the local OCR adapter on proposed/accepted view focuses without scoring')
+    view_ocr.add_argument('registry')
+    view_ocr.add_argument('--config')
+    view_ocr.add_argument('--tesseract')
+    view_ocr.add_argument('--output', required=True)
     study = commands.add_parser('pdf-study', help='Coverage-aware representative PDF inspection; preserves prior batch behavior')
     study.add_argument('config', help='JSON with input_directory resolved relative to this config file')
     study.add_argument('--output', required=True)
@@ -161,6 +175,18 @@ def main(argv=None):
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     try:
+        if args.command in {'views-init', 'views-apply', 'views-ocr'}:
+            if args.command == 'views-init':
+                result = create_views(args.study, args.config, args.output)
+            elif args.command == 'views-apply':
+                result = apply_views(args.registry, args.decisions, args.output)
+            else:
+                result = run_view_ocr(args.registry, args.output, config=read_json(args.config) if args.config else None, executable=args.tesseract)
+            print(json.dumps({'views': len(result['views']), 'snapshot_id': result['snapshot_id'], 'ocr_comparison': result.get('ocr_comparison')}, indent=2))
+            if args.command == 'views-ocr':
+                statuses = result['ocr_comparison']['result_statuses']
+                return 1 if not statuses or any(k not in {'recognized', 'empty'} for k in statuses) else 0
+            return 0
         if args.command == 'pdf-study':
             result = run_study(args.config, args.output)
             print(json.dumps({'status': result['status'], 'documents': len(result['documents']), 'summary': result['summary'], 'errors': result['errors']}, indent=2))
